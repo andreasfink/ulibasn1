@@ -14,7 +14,6 @@ typedef enum UMASN1ClassType
     UMASN1Class_Application     = 0b01,
     UMASN1Class_ContextSpecific = 0b10,
     UMASN1Class_Private         = 0b11,
-    
 } UMASN1ClassType;
 
 /* from http://luca.ntop.org/Teaching/Appunti/asn1.html */
@@ -22,7 +21,7 @@ typedef enum UMASN1ClassType
 
 typedef enum UMASN1PrimitiveType
 {
-    UMASN1Primitive_choice              = 0x00, /* dummy */
+    UMASN1Primitive_choice              = 0x00, /* dummy, you would never see this in the wild */
     UMASN1Primitive_boolean             = 0x01,
     UMASN1Primitive_integer             = 0x02,
     UMASN1Primitive_bitstring           = 0x03,
@@ -56,11 +55,17 @@ typedef enum UMASN1PrimitiveOrConstructed
 
 typedef NSInteger   UMASN1TagNumber;
 
+/*!
+ @class UMASN1Tag
+ @brief  UMASN1Tag represents the ASN1 tag of a PDU
+ 
+ */
+
 @interface  UMASN1Tag : UMObject
 {
-    UMASN1ClassType                 tagClass;
-    BOOL                            isConstructed;
-    uint64_t                        tagNumber;
+    UMASN1ClassType                 tagClass;       /*!< Universal,Application,ContextSpecific,Private  */
+    BOOL                            isConstructed;  /*!< if its a sequence of other objects or not */
+    uint64_t                        tagNumber;      /*!< the tag number is always positive */
 }
 
 @property (readwrite,assign) UMASN1ClassType    tagClass;
