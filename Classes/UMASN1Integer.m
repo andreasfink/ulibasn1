@@ -15,7 +15,15 @@
 
 - (UMASN1Integer *)init
 {
-    return [self initWithValue:0LL];
+    self = [super init];
+    if(self)
+    {
+        asn1_tag.tagClass = UMASN1Class_Universal;
+        [asn1_tag setTagIsPrimitive];
+        asn1_tag.tagNumber = UMASN1Primitive_integer;
+        [self setValue:0];
+    }
+    return self;
 }
 
 - (UMASN1Integer *)initWithValue:(int64_t)i
