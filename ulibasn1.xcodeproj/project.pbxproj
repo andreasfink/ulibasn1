@@ -77,10 +77,10 @@
 /* Begin PBXFileReference section */
 		A6061A001D2A6B2300A9BD54 /* UMASN1Enumerated.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMASN1Enumerated.h; sourceTree = "<group>"; };
 		A6061A011D2A6B2300A9BD54 /* UMASN1Enumerated.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UMASN1Enumerated.m; sourceTree = "<group>"; };
-		A6091FBC1CB535F10076BD59 /* UMASN1ObjectConstructed.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMASN1ObjectConstructed.h; sourceTree = "<group>"; };
-		A6091FBD1CB535F10076BD59 /* UMASN1ObjectConstructed.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UMASN1ObjectConstructed.m; sourceTree = "<group>"; };
-		A6091FC01CB536060076BD59 /* UMASN1ObjectPrimitive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMASN1ObjectPrimitive.h; sourceTree = "<group>"; };
-		A6091FC11CB536060076BD59 /* UMASN1ObjectPrimitive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UMASN1ObjectPrimitive.m; sourceTree = "<group>"; };
+		A6091FBC1CB535F10076BD59 /* UMASN1ObjectConstructed.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = UMASN1ObjectConstructed.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		A6091FBD1CB535F10076BD59 /* UMASN1ObjectConstructed.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = UMASN1ObjectConstructed.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		A6091FC01CB536060076BD59 /* UMASN1ObjectPrimitive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = UMASN1ObjectPrimitive.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		A6091FC11CB536060076BD59 /* UMASN1ObjectPrimitive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = UMASN1ObjectPrimitive.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		A63DDF7B19BD3C8C003F83B5 /* asn1_in_simple_words.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = asn1_in_simple_words.pdf; sourceTree = "<group>"; };
 		A63DDF7C19BD3D0B003F83B5 /* UMASN1UTF8String.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMASN1UTF8String.h; sourceTree = "<group>"; };
 		A63DDF7D19BD3D0B003F83B5 /* UMASN1UTF8String.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UMASN1UTF8String.m; sourceTree = "<group>"; };
@@ -414,7 +414,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0720;
-				ORGANIZATIONNAME = "Andreas Fink";
+				ORGANIZATIONNAME = "Andreas Fink (andreas@fink.org)";
 				TargetAttributes = {
 					A672C7A719652D1B0090FC94 = {
 						DevelopmentTeam = 2GSNWPNR77;
@@ -688,7 +688,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "ulibasn1Tests/ulibasn1Tests-Info.plist";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.messagemover.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_BUNDLE_IDENTIFIER = "me.fink.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -705,7 +705,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ulibasn1/ulibasn1-Prefix.pch";
 				INFOPLIST_FILE = "ulibasn1Tests/ulibasn1Tests-Info.plist";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.messagemover.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_BUNDLE_IDENTIFIER = "me.fink.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = xctest;
 			};

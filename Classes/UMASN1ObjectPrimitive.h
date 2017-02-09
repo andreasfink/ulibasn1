@@ -3,7 +3,7 @@
 //  ulibasn1
 //
 //  Created by Andreas Fink on 06/04/16.
-//  Copyright (c) 2016 Andreas Fink (andreas@fink.org)
+//  Copyright © 2017 Andreas Fink (andreas@fink.org). All rights reserved.
 //
 
 #import "UMASN1Object.h"

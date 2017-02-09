@@ -3,7 +3,7 @@
 //  ulibasn1Tests
 //
 //  Created by Andreas Fink on 03/07/14.
-//  Copyright (c) 2016 Andreas Fink
+//  Copyright © 2017 Andreas Fink (andreas@fink.org). All rights reserved.
 //
 
 #import <XCTest/XCTest.h>
