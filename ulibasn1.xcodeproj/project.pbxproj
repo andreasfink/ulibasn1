@@ -19,10 +19,8 @@
 		A63DDF8419BD556E003F83B5 /* UMASN1Sequence.m in Sources */ = {isa = PBXBuildFile; fileRef = A63DDF8219BD556E003F83B5 /* UMASN1Sequence.m */; };
 		A63DDF8719BD5A54003F83B5 /* UMASN1Set.h in Headers */ = {isa = PBXBuildFile; fileRef = A63DDF8519BD5A54003F83B5 /* UMASN1Set.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A63DDF8819BD5A54003F83B5 /* UMASN1Set.m in Sources */ = {isa = PBXBuildFile; fileRef = A63DDF8619BD5A54003F83B5 /* UMASN1Set.m */; };
-		A672C7AC19652D1B0090FC94 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A672C7AB19652D1B0090FC94 /* Cocoa.framework */; };
 		A672C7B619652D1B0090FC94 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A672C7B419652D1B0090FC94 /* InfoPlist.strings */; };
 		A672C7C119652D1B0090FC94 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A672C7C019652D1B0090FC94 /* XCTest.framework */; };
-		A672C7C219652D1B0090FC94 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A672C7AB19652D1B0090FC94 /* Cocoa.framework */; };
 		A672C7C519652D1B0090FC94 /* ulibasn1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A672C7A819652D1B0090FC94 /* ulibasn1.framework */; };
 		A672C7CB19652D1B0090FC94 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A672C7C919652D1B0090FC94 /* InfoPlist.strings */; };
 		A672C7CD19652D1B0090FC94 /* ulibasn1Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = A672C7CC19652D1B0090FC94 /* ulibasn1Tests.m */; };
@@ -109,7 +107,6 @@
 		A63DDF9B19BD5FF5003F83B5 /* X.694-200811_XMLSchema.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "X.694-200811_XMLSchema.pdf"; sourceTree = "<group>"; };
 		A63DDF9C19BD5FF5003F83B5 /* X.695-200811_Registration.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "X.695-200811_Registration.pdf"; sourceTree = "<group>"; };
 		A672C7A819652D1B0090FC94 /* ulibasn1.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ulibasn1.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A672C7AB19652D1B0090FC94 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		A672C7AE19652D1B0090FC94 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		A672C7AF19652D1B0090FC94 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		A672C7B019652D1B0090FC94 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -143,7 +140,7 @@
 		A68E8DA619652E0E0090FC94 /* UMASN1OctetString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UMASN1OctetString.m; sourceTree = "<group>"; };
 		A68E8DA919652E0E0090FC94 /* UMASN1Tag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMASN1Tag.h; sourceTree = "<group>"; };
 		A68E8DAA19652E0E0090FC94 /* UMASN1Tag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UMASN1Tag.m; sourceTree = "<group>"; };
-		A68E8DC319652E330090FC94 /* ulib.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ulib.framework; path = ../../../../../Library/Frameworks/ulib.framework; sourceTree = "<group>"; };
+		A68E8DC319652E330090FC94 /* ulib.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ulib.framework; path = /Library/Frameworks/ulib.framework; sourceTree = "<absolute>"; };
 		A6C6E8961CC7DDDE00ADA9E0 /* UMASN1ObjectIdentifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMASN1ObjectIdentifier.h; sourceTree = "<group>"; };
 		A6C6E8971CC7DDDE00ADA9E0 /* UMASN1ObjectIdentifier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UMASN1ObjectIdentifier.m; sourceTree = "<group>"; };
 		A6C6E89A1CC7DE1400ADA9E0 /* UMASN1ObjectDescriptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMASN1ObjectDescriptor.h; sourceTree = "<group>"; };
@@ -162,7 +159,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				A68E8DC419652E330090FC94 /* ulib.framework in Frameworks */,
-				A672C7AC19652D1B0090FC94 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -170,7 +166,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A672C7C219652D1B0090FC94 /* Cocoa.framework in Frameworks */,
 				A672C7C119652D1B0090FC94 /* XCTest.framework in Frameworks */,
 				A672C7C519652D1B0090FC94 /* ulibasn1.framework in Frameworks */,
 			);
@@ -209,7 +204,6 @@
 			isa = PBXGroup;
 			children = (
 				A68E8DC319652E330090FC94 /* ulib.framework */,
-				A672C7AB19652D1B0090FC94 /* Cocoa.framework */,
 				A672C7C019652D1B0090FC94 /* XCTest.framework */,
 				A672C7AD19652D1B0090FC94 /* Other Frameworks */,
 			);
