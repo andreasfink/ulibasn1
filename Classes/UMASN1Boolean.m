@@ -68,6 +68,7 @@
     [asn1_length setLength:1];
 }
 
+
 -(BOOL)isTrue
 {
     return ! [self isFalse];
