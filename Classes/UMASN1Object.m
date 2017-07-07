@@ -182,7 +182,11 @@ NSString *BinaryToNSString(const unsigned char *str, int size )
                 while(p2 <= self.asn1_length.length)
                 {
                     UMASN1Object *the_list_item = [[UMASN1Object alloc]initWithBerData:constructedData atPosition:&p2 context:context];
-                    [self.asn1_list addObject:the_list_item];
+                    if(the_list_item)
+                    {
+                        [self.asn1_list addObject:the_list_item];
+                    }
+                    
                     if(!(self.asn1_length.undefinedLength) && (p2 >= self.asn1_length.length))
                     {
                         break;
