@@ -164,6 +164,14 @@ NSString *BinaryToNSString(const unsigned char *str, int size )
                                                     }
                     ]);
         }
+        if( (self.asn1_tag.tagClass == UMASN1Class_Universal) &&
+           (self.asn1_tag.tagIsPrimitive) &&
+           (self.asn1_tag.tagNumber == 0) &&
+           (self.asn1_length.length == 0) )
+
+        {
+            return self;
+        }
         self.asn1_length = [[UMASN1Length alloc]initWithBerData:data atPosition:pos context:context];
         if(self.asn1_length.undefinedLength == NO)
         {
@@ -220,14 +228,11 @@ NSString *BinaryToNSString(const unsigned char *str, int size )
                 while(1)
                 {
                     UMASN1Object *the_list_item = [[UMASN1Object alloc]initWithBerData:data atPosition:pos context:context];
-                    if(the_list_item.isEndOfContents)
+                    if((the_list_item == NULL) || (the_list_item.isEndOfContents))
                     {
                         break;
                     }
-                    if(the_list_item)
-                    {
-                        [self.asn1_list addObject:the_list_item];
-                    }
+                    [self.asn1_list addObject:the_list_item];
                 }
             }
         }
