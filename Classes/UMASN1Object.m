@@ -243,7 +243,7 @@ NSString *BinaryToNSString(const unsigned char *str, int size )
     }
     @catch(NSException *exeption)
     {
-        NSLog(@"Exception in readBerData:atPos:%d on object %@: %@",(int)*pos,[[self class]description],exeption);
+        NSLog(@"Exception in readBerData:atPos:%d on object %@: %@\nData: %@",(int)*pos,[[self class]description],exeption,data);
         return NULL;
     }
     return self;
