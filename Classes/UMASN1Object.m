@@ -164,6 +164,8 @@ NSString *BinaryToNSString(const unsigned char *str, int size )
                                                     }
                     ]);
         }
+        self.asn1_length = [[UMASN1Length alloc]initWithBerData:data atPosition:pos context:context];
+
         if( (self.asn1_tag.tagClass == UMASN1Class_Universal) &&
            (self.asn1_tag.tagIsPrimitive) &&
            (self.asn1_tag.tagNumber == 0) &&
@@ -172,7 +174,6 @@ NSString *BinaryToNSString(const unsigned char *str, int size )
         {
             return self;
         }
-        self.asn1_length = [[UMASN1Length alloc]initWithBerData:data atPosition:pos context:context];
         if(self.asn1_length.undefinedLength == NO)
         {
             if(self.asn1_tag.tagIsPrimitive)
@@ -187,12 +188,15 @@ NSString *BinaryToNSString(const unsigned char *str, int size )
                 NSData *constructedData = grab_bytes(data,pos,self.asn1_length.length,self );
                 asn1_list = [[NSMutableArray alloc]init];
                 NSUInteger p2=0;
-                while(p2 <= self.asn1_length.length)
+                while(p2 < self.asn1_length.length)
                 {
                     UMASN1Object *the_list_item = [[UMASN1Object alloc]initWithBerData:constructedData atPosition:&p2 context:context];
                     if(the_list_item)
                     {
-                        [self.asn1_list addObject:the_list_item];
+                        if(the_list_item.isEndOfContents == NO)
+                        {
+                            [self.asn1_list addObject:the_list_item];
+                        }
                     }
                     
                     if(!(self.asn1_length.undefinedLength) && (p2 >= self.asn1_length.length))
