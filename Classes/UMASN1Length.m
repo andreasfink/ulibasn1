@@ -114,7 +114,7 @@ static inline uint8_t grab_byte(NSData *data,NSUInteger *pos, id obj)
             length = 0;
             undefinedLength = YES;
         }
-        else if (byte < 0x7F)
+        else if (byte < 0x80)
         {
             /* short form */
             length = byte;
