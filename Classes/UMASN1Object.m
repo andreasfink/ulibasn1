@@ -30,7 +30,8 @@ static inline uint8_t grab_byte(NSData *data,NSUInteger *pos, id obj)
                                      userInfo:@{
                                                 @"sysmsg" : @"reading beyond end of data in content bytes",
                                                 @"func": @(__func__),
-                                                @"obj" : obj,
+                                                @"data" : data,
+                                                @"pos" : @(*pos),
                                                 @"backtrace": UMBacktrace(NULL,0)
                                                 }
                 ]);
@@ -50,7 +51,8 @@ static inline NSData *grab_bytes(NSData *data,NSUInteger *pos, NSUInteger grable
                                      userInfo:@{
                                                 @"sysmsg" : @"reading beyond end of data in content bytes",
                                                 @"func": @(__func__),
-                                                @"obj" : obj,
+                                                @"data" : data,
+                                                @"pos" : @(*pos),
                                                 @"backtrace": UMBacktrace(NULL,0)
                                                 }
                 ]);
@@ -142,7 +144,14 @@ NSString *BinaryToNSString(const unsigned char *str, int size )
     self = [super init];
     if(self)
     {
-        self = [self readBerData:data atPosition:pos context:context];
+        @try
+        {
+            self = [self readBerData:data atPosition:pos context:context];
+        }
+        @catch(NSException *e)
+        {
+            @throw(e);
+        }
         self = [self processAfterDecodeWithContext:context];
     }
     return self;
@@ -185,7 +194,8 @@ NSString *BinaryToNSString(const unsigned char *str, int size )
             else // isConstructed
             {
                 asn1_data = NULL;
-                NSData *constructedData = grab_bytes(data,pos,self.asn1_length.length,self );
+                NSData *constructedData  = NULL;
+                constructedData = grab_bytes(data,pos,self.asn1_length.length,self );
                 asn1_list = [[NSMutableArray alloc]init];
                 NSUInteger p2=0;
                 while(p2 < self.asn1_length.length)
@@ -241,10 +251,10 @@ NSString *BinaryToNSString(const unsigned char *str, int size )
             }
         }
     }
-    @catch(NSException *exeption)
+    @catch(NSException *exception)
     {
-        NSLog(@"Exception in readBerData:atPos:%d on object %@: %@\nData: %@",(int)*pos,[[self class]description],exeption,data);
-        return NULL;
+        //NSLog(@"Exception in readBerData:atPos:%d on object %@: %@\nData: %@",(int)*pos,[[self class]description],exeption,data);
+        @throw(exception);
     }
     return self;
 }
