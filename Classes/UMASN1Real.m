@@ -549,13 +549,6 @@
     return value * pow(10,exponent);
 }
 
-- (void)processBeforeEncode
-{
-    [super processBeforeEncode];
-    asn1_tag.tagClass = UMASN1Class_Universal;
-    asn1_tag.tagNumber = UMASN1Primitive_real;
-}
-
 - (NSString *)objectName
 {
     return @"Real";

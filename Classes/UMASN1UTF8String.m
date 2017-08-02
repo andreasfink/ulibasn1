@@ -43,14 +43,6 @@
     self.asn1_length.length = asn1_data.length;
 }
 
-- (void)processBeforeEncode
-{
-    [super processBeforeEncode];
-    asn1_tag.tagClass = UMASN1Class_Universal;
-    asn1_tag.tagNumber = UMASN1Primitive_UTF8String;
-}
-
-
 - (NSString *)objectName
 {
     return @"UTF8String";
