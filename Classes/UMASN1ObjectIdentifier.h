@@ -8,6 +8,9 @@
 
 #import <ulibasn1/ulibasn1.h>
 
-@interface UMASN1ObjectIdentifier : UMASN1Object
+@interface UMASN1ObjectIdentifier : UMASN1ObjectPrimitive
+
+- (UMASN1ObjectIdentifier *)initWithValue:(NSData *)d;
+- (UMASN1ObjectIdentifier *)initWithString:(NSString *)s;
 
 @end

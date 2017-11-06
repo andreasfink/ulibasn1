@@ -47,9 +47,9 @@
 		A68E8DC219652E0E0090FC94 /* UMASN1Tag.m in Sources */ = {isa = PBXBuildFile; fileRef = A68E8DAA19652E0E0090FC94 /* UMASN1Tag.m */; };
 		A68E8DC419652E330090FC94 /* ulib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A68E8DC319652E330090FC94 /* ulib.framework */; };
 		A68E8DFB196548520090FC94 /* ulibasn1.h in Headers */ = {isa = PBXBuildFile; fileRef = A672C7B819652D1B0090FC94 /* ulibasn1.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A6C6E8981CC7DDDE00ADA9E0 /* UMASN1ObjectIdentifier.h in Headers */ = {isa = PBXBuildFile; fileRef = A6C6E8961CC7DDDE00ADA9E0 /* UMASN1ObjectIdentifier.h */; };
+		A6C6E8981CC7DDDE00ADA9E0 /* UMASN1ObjectIdentifier.h in Headers */ = {isa = PBXBuildFile; fileRef = A6C6E8961CC7DDDE00ADA9E0 /* UMASN1ObjectIdentifier.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A6C6E8991CC7DDDE00ADA9E0 /* UMASN1ObjectIdentifier.m in Sources */ = {isa = PBXBuildFile; fileRef = A6C6E8971CC7DDDE00ADA9E0 /* UMASN1ObjectIdentifier.m */; };
-		A6C6E89C1CC7DE1400ADA9E0 /* UMASN1ObjectDescriptor.h in Headers */ = {isa = PBXBuildFile; fileRef = A6C6E89A1CC7DE1400ADA9E0 /* UMASN1ObjectDescriptor.h */; };
+		A6C6E89C1CC7DE1400ADA9E0 /* UMASN1ObjectDescriptor.h in Headers */ = {isa = PBXBuildFile; fileRef = A6C6E89A1CC7DE1400ADA9E0 /* UMASN1ObjectDescriptor.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A6C6E89D1CC7DE1400ADA9E0 /* UMASN1ObjectDescriptor.m in Sources */ = {isa = PBXBuildFile; fileRef = A6C6E89B1CC7DE1400ADA9E0 /* UMASN1ObjectDescriptor.m */; };
 		A6C8F1F319BA7D0C0090FC94 /* UMASN1Real.h in Headers */ = {isa = PBXBuildFile; fileRef = A6C8F1F119BA7D0C0090FC94 /* UMASN1Real.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A6C8F1F419BA7D0C0090FC94 /* UMASN1Real.m in Sources */ = {isa = PBXBuildFile; fileRef = A6C8F1F219BA7D0C0090FC94 /* UMASN1Real.m */; };

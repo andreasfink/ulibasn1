@@ -10,6 +10,8 @@
 #import "UMASN1Object.h"
 #import "UMASN1ObjectConstructed.h"
 #import "UMASN1ObjectPrimitive.h"
+#import "UMASN1ObjectDescriptor.h"
+#import "UMASN1ObjectIdentifier.h"
 #import "UMASN1Tag.h"
 #import "UMASN1Length.h"
 #import "UMASN1BitString.h"

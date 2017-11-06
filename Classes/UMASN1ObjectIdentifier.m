@@ -43,4 +43,23 @@
     return NO;
 }
 
+
+
+- (UMASN1ObjectIdentifier *)initWithValue:(NSData *)d
+{
+    self = [super init];
+    if(self)
+    {
+        [asn1_tag setTagIsPrimitive];
+        asn1_tag.tagClass = UMASN1Class_Universal;
+        asn1_tag.tagNumber = UMASN1Primitive_object_identifier;
+        self.asn1_data = d;
+    }
+    return self;
+}
+
+- (UMASN1ObjectIdentifier *)initWithString:(NSString *)s
+{
+    return [self initWithValue:[s unhexedData]];
+}
 @end
