@@ -366,6 +366,10 @@ NSString *BinaryToNSString(const unsigned char *str, int size )
 
 - (UMASN1Object *)getObjectAtPosition:(NSUInteger)pos
 {
+    if(asn1_tag == NULL)
+    {
+        return NULL;
+    }  
     if(!asn1_tag.isConstructed)
     {
         NSLog(@"trying to read object at position %lu from a ASN1 object which is not a CONSTRUCTED one",(unsigned long)pos);
