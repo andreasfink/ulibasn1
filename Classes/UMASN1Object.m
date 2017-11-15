@@ -174,7 +174,7 @@ NSString *BinaryToNSString(const unsigned char *str, int size )
                     ]);
         }
         self.asn1_length = [[UMASN1Length alloc]initWithBerData:data atPosition:pos context:context];
-
+        /* FIXME: is this really correct ? */
         if( (self.asn1_tag.tagClass == UMASN1Class_Universal) &&
            (self.asn1_tag.tagIsPrimitive) &&
            (self.asn1_tag.tagNumber == 0) &&
