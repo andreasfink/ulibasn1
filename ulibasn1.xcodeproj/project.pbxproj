@@ -86,12 +86,6 @@
 		A63DDF8219BD556E003F83B5 /* UMASN1Sequence.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UMASN1Sequence.m; sourceTree = "<group>"; };
 		A63DDF8519BD5A54003F83B5 /* UMASN1Set.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMASN1Set.h; sourceTree = "<group>"; };
 		A63DDF8619BD5A54003F83B5 /* UMASN1Set.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UMASN1Set.m; sourceTree = "<group>"; };
-		A63DDF8919BD5FF5003F83B5 /* E.212-200702-S!Amd1!PDF-E.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "E.212-200702-S!Amd1!PDF-E.pdf"; sourceTree = "<group>"; };
-		A63DDF8A19BD5FF5003F83B5 /* E.212-200805-I!!PDF-E-2.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "E.212-200805-I!!PDF-E-2.pdf"; sourceTree = "<group>"; };
-		A63DDF8B19BD5FF5003F83B5 /* E.212-200805-I!!PDF-E.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "E.212-200805-I!!PDF-E.pdf"; sourceTree = "<group>"; };
-		A63DDF8C19BD5FF5003F83B5 /* E.212-201011-I!Amd2!PDF-E.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "E.212-201011-I!Amd2!PDF-E.pdf"; sourceTree = "<group>"; };
-		A63DDF8D19BD5FF5003F83B5 /* E.213-198811-I!!PDF-E.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "E.213-198811-I!!PDF-E.pdf"; sourceTree = "<group>"; };
-		A63DDF8E19BD5FF5003F83B5 /* Q.708B-2011-ISPC.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "Q.708B-2011-ISPC.pdf"; sourceTree = "<group>"; };
 		A63DDF8F19BD5FF5003F83B5 /* X.680-200811_BasicNotation.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "X.680-200811_BasicNotation.pdf"; sourceTree = "<group>"; };
 		A63DDF9019BD5FF5003F83B5 /* X.680-201110-Cor1.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "X.680-201110-Cor1.pdf"; sourceTree = "<group>"; };
 		A63DDF9119BD5FF5003F83B5 /* X.680-201403-Cor2.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "X.680-201403-Cor2.pdf"; sourceTree = "<group>"; };
@@ -306,12 +300,6 @@
 			isa = PBXGroup;
 			children = (
 				A63DDF7B19BD3C8C003F83B5 /* asn1_in_simple_words.pdf */,
-				A63DDF8919BD5FF5003F83B5 /* E.212-200702-S!Amd1!PDF-E.pdf */,
-				A63DDF8A19BD5FF5003F83B5 /* E.212-200805-I!!PDF-E-2.pdf */,
-				A63DDF8B19BD5FF5003F83B5 /* E.212-200805-I!!PDF-E.pdf */,
-				A63DDF8C19BD5FF5003F83B5 /* E.212-201011-I!Amd2!PDF-E.pdf */,
-				A63DDF8D19BD5FF5003F83B5 /* E.213-198811-I!!PDF-E.pdf */,
-				A63DDF8E19BD5FF5003F83B5 /* Q.708B-2011-ISPC.pdf */,
 				A63DDF8F19BD5FF5003F83B5 /* X.680-200811_BasicNotation.pdf */,
 				A63DDF9019BD5FF5003F83B5 /* X.680-201110-Cor1.pdf */,
 				A63DDF9119BD5FF5003F83B5 /* X.680-201403-Cor2.pdf */,
