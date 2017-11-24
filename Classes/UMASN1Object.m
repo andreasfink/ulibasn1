@@ -372,7 +372,7 @@ NSString *BinaryToNSString(const unsigned char *str, int size )
     }  
     if(!asn1_tag.isConstructed)
     {
-        NSLog(@"trying to read object at position %lu from a ASN1 object which is not a CONSTRUCTED one",(unsigned long)pos);
+        //NSLog(@"trying to read object at position %lu from a ASN1 object which is not a CONSTRUCTED one",(unsigned long)pos);
         return NULL;
     }
 
