@@ -20,6 +20,8 @@
 - (UMASN1BitString *)initWithValue:(NSData *)d bitcount:(NSInteger)bc;
 - (NSString *)objectValue;
 
+
+- (void)setBit:(NSInteger)bit value:(BOOL)bitValue;
 - (void)setBit:(NSInteger)bit;
 - (void)clearBit:(NSInteger)bit;
 - (BOOL)bit:(NSInteger)bit;
