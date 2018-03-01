@@ -437,5 +437,13 @@
     XCTAssert([self tcapTest:data]==NO,"Can not decode tcapData33");
 }
 
-
+- (void)testBitstring1
+{
+    UMASN1BitString *bs = [[UMASN1BitString alloc]init];
+    [bs setBit:1];
+    NSData *d = bs.asn1_data;
+    NSString *s1 = [d hexString];
+    NSString *s2 = @"0780";
+    XCTAssert ([s1 isEqualToString:s2],@"Bitstring encoding failed. Got %@ instead of %@",s1,s2);
+}
 @end

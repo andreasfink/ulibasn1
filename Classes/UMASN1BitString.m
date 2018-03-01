@@ -128,7 +128,7 @@
 - (NSData *)dataExtendedToBit:(NSInteger)bit
 {
 
-    NSInteger byteCount = (bit + 7) / 8;
+    NSInteger byteCount = (bit + 8) / 8;
     uint8_t unusedBits = (uint8_t)((byteCount) * 8 - bit);
 
     if(self.asn1_data == NULL)
@@ -141,18 +141,20 @@
         }
         return d;
     }
-    else if(byteCount > self.asn1_data.length)
+    else if((byteCount+1) > self.asn1_data.length)
     {
-        NSMutableData *d = [self.asn1_data mutableCopy];
+        NSMutableData *d = [[NSMutableData alloc]init];
         const uint8_t *b = self.asn1_data.bytes;
         [d appendByte:unusedBits];
-        for(NSInteger i=1;i<self.asn1_data.length;i++)
+        NSInteger i;
+        for(i=1;i<self.asn1_data.length;i++)
         {
             [d appendByte:b[i]];
         }
-        for(NSInteger i=self.asn1_data.length;i<byteCount;i++)
+        while(i< (byteCount+1))
         {
             [d appendByte:0];
+            i++;
         }
         return d;
     }
@@ -171,7 +173,7 @@
 - (void)setBit:(NSInteger)bit value:(BOOL)bitValue
 {
     [self extendToBit:bit];
-    NSInteger bytePos = (bit+7)/8;
+    NSInteger bytePos = bit/8;
     NSInteger bitPos = 8 - (bit % 8);
     NSMutableData *d = [self.asn1_data mutableCopy];
     const uint8_t *b = d.bytes;
