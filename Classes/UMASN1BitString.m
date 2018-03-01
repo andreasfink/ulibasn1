@@ -129,7 +129,7 @@
 {
 
     NSInteger byteCount = (bit + 8) / 8;
-    uint8_t unusedBits = (uint8_t)((byteCount) * 8 - bit);
+    uint8_t unusedBits = (uint8_t)((byteCount) * 8 - bit -1);
 
     if(self.asn1_data == NULL)
     {
@@ -141,7 +141,7 @@
         }
         return d;
     }
-    else if((byteCount+1) > self.asn1_data.length)
+    else /*if((byteCount+1) > self.asn1_data.length)*/
     {
         NSMutableData *d = [[NSMutableData alloc]init];
         const uint8_t *b = self.asn1_data.bytes;
@@ -157,11 +157,11 @@
             i++;
         }
         return d;
-    }
+    }/*
     else
     {
         return self.asn1_data;
-    }
+    }*/
 }
 
 - (void)extendToBit:(NSInteger)bit
@@ -174,17 +174,17 @@
 {
     [self extendToBit:bit];
     NSInteger bytePos = bit/8;
-    NSInteger bitPos = 8 - (bit % 8);
+    NSInteger bitPos = bit % 8;
     NSMutableData *d = [self.asn1_data mutableCopy];
     const uint8_t *b = d.bytes;
     uint8_t val = b[bytePos+1];
     if(bitValue)
     {
-        val = val | (1 << bitPos);
+        val = val | (1 << (7-bitPos));
     }
     else
     {
-        val = val ^ ~(1 << bitPos);
+        val = val & ~(1 << (7-bitPos));
     }
     [d replaceBytesInRange:NSMakeRange(bytePos+1,1) withBytes:&val length:1];
     self.asn1_data = d;
@@ -204,11 +204,11 @@
 - (BOOL)bit:(NSInteger)bit
 {
     NSData *d = [self dataExtendedToBit:bit];
-    NSInteger bytePos = (bit+7)/8;
+    NSInteger bytePos = bit/8;
     NSInteger bitPos = (bit % 8);
     const uint8_t *b = d.bytes;
     uint8_t val = b[bytePos+1];
-    if(val  & (1 << bitPos))
+    if(val  & (1 << (7-bitPos)))
     {
         return YES;
     }

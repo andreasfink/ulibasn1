@@ -440,10 +440,65 @@
 - (void)testBitstring1
 {
     UMASN1BitString *bs = [[UMASN1BitString alloc]init];
-    [bs setBit:1];
+    [bs setBit:0];
     NSData *d = bs.asn1_data;
     NSString *s1 = [d hexString];
     NSString *s2 = @"0780";
+    XCTAssert ([s1 isEqualToString:s2],@"Bitstring encoding failed. Got %@ instead of %@",s1,s2);
+}
+
+- (void)testBitstring2
+{
+    UMASN1BitString *bs = [[UMASN1BitString alloc]init];
+    [bs setBit:1];
+    NSData *d = bs.asn1_data;
+    NSString *s1 = [d hexString];
+    NSString *s2 = @"0640";
+    XCTAssert ([s1 isEqualToString:s2],@"Bitstring encoding failed. Got %@ instead of %@",s1,s2);
+}
+
+- (void)testBitstring3
+{
+    UMASN1BitString *bs = [[UMASN1BitString alloc]init];
+    [bs clearBit:2];
+    NSData *d = bs.asn1_data;
+    NSString *s1 = [d hexString];
+    NSString *s2 = @"0500";
+    XCTAssert ([s1 isEqualToString:s2],@"Bitstring encoding failed. Got %@ instead of %@",s1,s2);
+}
+
+- (void)testBitstring4
+{
+    UMASN1BitString *bs = [[UMASN1BitString alloc]init];
+    [bs setBit:3];
+    NSData *d = bs.asn1_data;
+    NSString *s1 = [d hexString];
+    NSString *s2 = @"0410";
+    XCTAssert ([s1 isEqualToString:s2],@"Bitstring encoding failed. Got %@ instead of %@",s1,s2);
+}
+
+- (void)testBitstring5
+{
+    UMASN1BitString *bs = [[UMASN1BitString alloc]init];
+    [bs setBit:0];
+    [bs setBit:1];
+    [bs setBit:2];
+    [bs setBit:3];
+    [bs setBit:4];
+    [bs setBit:5];
+    [bs setBit:6];
+    [bs setBit:7];
+    [bs setBit:8];
+    [bs setBit:9];
+    [bs setBit:10];
+    [bs setBit:11];
+    [bs setBit:12];
+    [bs setBit:13];
+    [bs setBit:14];
+    [bs setBit:15];
+    NSData *d = bs.asn1_data;
+    NSString *s1 = [d hexString];
+    NSString *s2 = @"00FFFF";
     XCTAssert ([s1 isEqualToString:s2],@"Bitstring encoding failed. Got %@ instead of %@",s1,s2);
 }
 @end
