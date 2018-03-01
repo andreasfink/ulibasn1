@@ -104,10 +104,6 @@
     return [asn1_data hexString];
 }
 
-- (void)setBit:(NSInteger)bit
-{
-    /* TODO: set the corresponding bit */
-}
 
 + (uint64_t)classTagNumber
 {
@@ -128,5 +124,73 @@
     return NO;
 }
 
+
+
+- (void)extendToBit:(NSInteger)bit
+{
+    NSInteger byteCount = (bit + 7) / 8;
+    
+    if(self.asn1_data == NULL)
+    {
+        NSMutableData *d = [[NSMutableData alloc]init];
+        for(NSInteger i=0;i<byteCount;i++)
+        {
+            [d appendByte:0];
+        }
+        self.asn1_data = d;
+    }
+    else if(byteCount > self.asn1_data.length)
+    {
+        NSMutableData *d = [self.asn1_data mutableCopy];
+        for(NSInteger i=self.asn1_data.length;i<byteCount;i++)
+        {
+            [d appendByte:0];
+        }
+        self.asn1_data = d;
+    }
+}
+
+- (void)setBit:(NSInteger)bit
+{
+    [self extendToBit:bit];
+    NSInteger bytePos = (bit+7)/8;
+    NSInteger bitPos = (bit % 8);
+    NSMutableData *d = [self.asn1_data mutableCopy];
+    const uint8_t *b = d.bytes;
+    uint8_t val = b[bytePos];
+    
+    val = val | (1 << bitPos);
+    [d replaceBytesInRange:NSMakeRange(bytePos,1) withBytes:&val length:1];
+    self.asn1_data = d;
+}
+
+- (void)clearBit:(NSInteger)bit
+{
+    [self extendToBit:bit];
+    NSInteger bytePos = (bit+7)/8;
+    NSInteger bitPos = (bit % 8);
+    NSMutableData *d = [self.asn1_data mutableCopy];
+    const uint8_t *b = d.bytes;
+    uint8_t val = b[bytePos];
+    
+    val = val ^ ~(1 << bitPos);
+    [d replaceBytesInRange:NSMakeRange(bytePos,1) withBytes:&val length:1];
+    self.asn1_data = d;
+}
+
+- (BOOL)bit:(NSInteger)bit
+{
+    [self extendToBit:bit];
+    NSInteger bytePos = (bit+7)/8;
+    NSInteger bitPos = (bit % 8);
+    NSMutableData *d = [self.asn1_data mutableCopy];
+    const uint8_t *b = d.bytes;
+    uint8_t val = b[bytePos];
+    if(val  & (1 << bitPos))
+    {
+        return YES;
+    }
+    return NO;
+}
 
 @end

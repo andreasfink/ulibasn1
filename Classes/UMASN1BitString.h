@@ -21,5 +21,6 @@
 - (NSString *)objectValue;
 
 - (void)setBit:(NSInteger)bit;
-
+- (void)clearBit:(NSInteger)bit;
+- (BOOL)bit:(NSInteger)bit;
 @end
