@@ -501,4 +501,43 @@
     NSString *s2 = @"00FFFF";
     XCTAssert ([s1 isEqualToString:s2],@"Bitstring encoding failed. Got %@ instead of %@",s1,s2);
 }
+
+- (void) testOidEncoding
+{
+    NSString *testString = @"2.16.756.5.39";
+    NSString *expectedHex = @"6085740527";
+
+    UMASN1ObjectIdentifier *oid = [[UMASN1ObjectIdentifier alloc]initWithOIDString:testString];
+
+    NSString *oidHexString = [[oid value]hexString];
+    XCTAssert ([oidHexString isEqualToString:expectedHex],@"oid encoding failed. Got %@ instead of %@",oidHexString,expectedHex);
+}
+
+
+- (void) testOidDecoding
+{
+    uint8_t bytes[] =  { 0x60, 0x85, 0x74, 0x05, 0x27 };
+    NSData *testData = [NSData dataWithBytes:bytes length:sizeof(bytes)];
+    NSString *expectedString = @"2.16.756.5.39";
+
+
+    UMASN1ObjectIdentifier *oid2 = [[UMASN1ObjectIdentifier alloc]initWithValue:testData];
+    NSString *oidPrintable = [oid2 oidString];
+
+    XCTAssert ([oidPrintable isEqualToString:expectedString],@"oid decoding failed. Got %@ instead of %@",oidPrintable,expectedString);
+}
+
+- (void) testOidDecoding2
+{
+    uint8_t bytes[] =  { 0x04,0x00, 0x00, 0x01, 0x00, 0x01, 0x01 };
+    NSData *testData = [NSData dataWithBytes:bytes length:sizeof(bytes)];
+    NSString *expectedString = @"0.4.0.0.1.0.1.1";
+
+
+    UMASN1ObjectIdentifier *oid2 = [[UMASN1ObjectIdentifier alloc]initWithValue:testData];
+    NSString *oidPrintable = [oid2 oidString];
+
+    XCTAssert ([oidPrintable isEqualToString:expectedString],@"oid decoding failed. Got %@ instead of %@",oidPrintable,expectedString);
+
+}
 @end

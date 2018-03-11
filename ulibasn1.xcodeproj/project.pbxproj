@@ -25,6 +25,9 @@
 		A672C7CB19652D1B0090FC94 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A672C7C919652D1B0090FC94 /* InfoPlist.strings */; };
 		A672C7CD19652D1B0090FC94 /* ulibasn1Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = A672C7CC19652D1B0090FC94 /* ulibasn1Tests.m */; };
 		A675980D1B1C64840090FC94 /* VERSION in Resources */ = {isa = PBXBuildFile; fileRef = A675980C1B1C64840090FC94 /* VERSION */; };
+		A687A2032055D01E00981654 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A687A2022055D01E00981654 /* main.m */; };
+		A687A2072055D02B00981654 /* ulib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A68E8DC319652E330090FC94 /* ulib.framework */; };
+		A687A2082055D03000981654 /* ulibasn1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A672C7A819652D1B0090FC94 /* ulibasn1.framework */; };
 		A68E8DAB19652E0E0090FC94 /* UMASN1BitString.h in Headers */ = {isa = PBXBuildFile; fileRef = A68E8D9319652E0E0090FC94 /* UMASN1BitString.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A68E8DAC19652E0E0090FC94 /* UMASN1BitString.m in Sources */ = {isa = PBXBuildFile; fileRef = A68E8D9419652E0E0090FC94 /* UMASN1BitString.m */; };
 		A68E8DAD19652E0E0090FC94 /* UMASN1Boolean.h in Headers */ = {isa = PBXBuildFile; fileRef = A68E8D9519652E0E0090FC94 /* UMASN1Boolean.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -72,6 +75,18 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		A687A1FE2055D01D00981654 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		A6061A001D2A6B2300A9BD54 /* UMASN1Enumerated.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMASN1Enumerated.h; sourceTree = "<group>"; };
 		A6061A011D2A6B2300A9BD54 /* UMASN1Enumerated.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UMASN1Enumerated.m; sourceTree = "<group>"; };
@@ -114,6 +129,8 @@
 		A672C7CA19652D1B0090FC94 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		A672C7CC19652D1B0090FC94 /* ulibasn1Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ulibasn1Tests.m; sourceTree = "<group>"; };
 		A675980C1B1C64840090FC94 /* VERSION */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = VERSION; sourceTree = "<group>"; };
+		A687A2002055D01D00981654 /* oid */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = oid; sourceTree = BUILT_PRODUCTS_DIR; };
+		A687A2022055D01E00981654 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A68E8D9319652E0E0090FC94 /* UMASN1BitString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMASN1BitString.h; sourceTree = "<group>"; };
 		A68E8D9419652E0E0090FC94 /* UMASN1BitString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UMASN1BitString.m; sourceTree = "<group>"; };
 		A68E8D9519652E0E0090FC94 /* UMASN1Boolean.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMASN1Boolean.h; sourceTree = "<group>"; };
@@ -165,6 +182,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A687A1FD2055D01D00981654 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A687A2072055D02B00981654 /* ulib.framework in Frameworks */,
+				A687A2082055D03000981654 /* ulibasn1.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -180,6 +206,7 @@
 				A68E8D9219652E0E0090FC94 /* Classes */,
 				A672C7B119652D1B0090FC94 /* ulibasn1 */,
 				A672C7C619652D1B0090FC94 /* ulibasn1Tests */,
+				A687A2012055D01E00981654 /* oid */,
 				A672C7AA19652D1B0090FC94 /* Frameworks */,
 				A672C7A919652D1B0090FC94 /* Products */,
 			);
@@ -190,6 +217,7 @@
 			children = (
 				A672C7A819652D1B0090FC94 /* ulibasn1.framework */,
 				A672C7BF19652D1B0090FC94 /* ulibasn1Tests.xctest */,
+				A687A2002055D01D00981654 /* oid */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -249,6 +277,14 @@
 				A672C7C919652D1B0090FC94 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A687A2012055D01E00981654 /* oid */ = {
+			isa = PBXGroup;
+			children = (
+				A687A2022055D01E00981654 /* main.m */,
+			);
+			path = oid;
 			sourceTree = "<group>";
 		};
 		A68E8D9219652E0E0090FC94 /* Classes */ = {
@@ -389,6 +425,23 @@
 			productReference = A672C7BF19652D1B0090FC94 /* ulibasn1Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		A687A1FF2055D01D00981654 /* oid */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A687A2062055D01E00981654 /* Build configuration list for PBXNativeTarget "oid" */;
+			buildPhases = (
+				A687A1FC2055D01D00981654 /* Sources */,
+				A687A1FD2055D01D00981654 /* Frameworks */,
+				A687A1FE2055D01D00981654 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = oid;
+			productName = oid;
+			productReference = A687A2002055D01D00981654 /* oid */;
+			productType = "com.apple.product-type.tool";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -404,6 +457,11 @@
 					};
 					A672C7BE19652D1B0090FC94 = {
 						TestTargetID = A672C7A719652D1B0090FC94;
+					};
+					A687A1FF2055D01D00981654 = {
+						CreatedOnToolsVersion = 9.2;
+						DevelopmentTeam = 2GSNWPNR77;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -421,6 +479,7 @@
 			targets = (
 				A672C7A719652D1B0090FC94 /* ulibasn1 */,
 				A672C7BE19652D1B0090FC94 /* ulibasn1Tests */,
+				A687A1FF2055D01D00981654 /* oid */,
 			);
 		};
 /* End PBXProject section */
@@ -495,6 +554,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				A672C7CD19652D1B0090FC94 /* ulibasn1Tests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A687A1FC2055D01D00981654 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A687A2032055D01E00981654 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -716,6 +783,51 @@
 			};
 			name = Release;
 		};
+		A687A2042055D01E00981654 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEPLOYMENT_LOCATION = NO;
+				DEVELOPMENT_TEAM = 2GSNWPNR77;
+				DSTROOT = "";
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INSTALL_PATH = "";
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		A687A2052055D01E00981654 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEPLOYMENT_LOCATION = NO;
+				DEVELOPMENT_TEAM = 2GSNWPNR77;
+				DSTROOT = "";
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INSTALL_PATH = "";
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -742,6 +854,15 @@
 			buildConfigurations = (
 				A672C7D419652D1B0090FC94 /* Debug */,
 				A672C7D519652D1B0090FC94 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A687A2062055D01E00981654 /* Build configuration list for PBXNativeTarget "oid" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A687A2042055D01E00981654 /* Debug */,
+				A687A2052055D01E00981654 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

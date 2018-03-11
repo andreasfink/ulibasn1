@@ -632,6 +632,7 @@ NSString *BinaryToNSString(const unsigned char *str, int size )
         }
         else
         {
+            /* FIXME: return integer for INTEGER type  instead of its hex bytes */
             return [asn1_data hexString];
         }
     }
