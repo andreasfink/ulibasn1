@@ -19,12 +19,10 @@
 		A63DDF8419BD556E003F83B5 /* UMASN1Sequence.m in Sources */ = {isa = PBXBuildFile; fileRef = A63DDF8219BD556E003F83B5 /* UMASN1Sequence.m */; };
 		A63DDF8719BD5A54003F83B5 /* UMASN1Set.h in Headers */ = {isa = PBXBuildFile; fileRef = A63DDF8519BD5A54003F83B5 /* UMASN1Set.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A63DDF8819BD5A54003F83B5 /* UMASN1Set.m in Sources */ = {isa = PBXBuildFile; fileRef = A63DDF8619BD5A54003F83B5 /* UMASN1Set.m */; };
-		A672C7B619652D1B0090FC94 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A672C7B419652D1B0090FC94 /* InfoPlist.strings */; };
 		A672C7C119652D1B0090FC94 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A672C7C019652D1B0090FC94 /* XCTest.framework */; };
 		A672C7C519652D1B0090FC94 /* ulibasn1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A672C7A819652D1B0090FC94 /* ulibasn1.framework */; };
 		A672C7CB19652D1B0090FC94 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A672C7C919652D1B0090FC94 /* InfoPlist.strings */; };
 		A672C7CD19652D1B0090FC94 /* ulibasn1Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = A672C7CC19652D1B0090FC94 /* ulibasn1Tests.m */; };
-		A675980D1B1C64840090FC94 /* VERSION in Resources */ = {isa = PBXBuildFile; fileRef = A675980C1B1C64840090FC94 /* VERSION */; };
 		A687A2032055D01E00981654 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A687A2022055D01E00981654 /* main.m */; };
 		A687A2072055D02B00981654 /* ulib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A68E8DC319652E330090FC94 /* ulib.framework */; };
 		A687A2082055D03000981654 /* ulibasn1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A672C7A819652D1B0090FC94 /* ulibasn1.framework */; };
@@ -448,7 +446,7 @@
 		A672C79F19652D1B0090FC94 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0900;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = "Andreas Fink (andreas@fink.org)";
 				TargetAttributes = {
 					A672C7A719652D1B0090FC94 = {
@@ -489,8 +487,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A672C7B619652D1B0090FC94 /* InfoPlist.strings in Resources */,
-				A675980D1B1C64840090FC94 /* VERSION in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -612,12 +608,14 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -669,12 +667,14 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -719,7 +719,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ulibasn1/ulibasn1-Prefix.pch";
 				INFOPLIST_FILE = "ulibasn1/ulibasn1-Info.plist";
-				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				PRODUCT_BUNDLE_IDENTIFIER = me.fink.ulibasn1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = framework;
@@ -738,7 +738,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ulibasn1/ulibasn1-Prefix.pch";
 				INFOPLIST_FILE = "ulibasn1/ulibasn1-Info.plist";
-				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				PRODUCT_BUNDLE_IDENTIFIER = me.fink.ulibasn1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = framework;
