@@ -254,12 +254,12 @@
         value1 = value1 - 80;
     }
 
-    [s appendFormat:@"%llu.%llu",value0,value1];
+    [s appendFormat:@"%lld.%lld",( long long)value0,(long long)value1];
 
     int64_t valueN = [self grabInteger:bytes atPosition:&pos max:len];
     while(valueN >= 0)
     {
-        [s appendFormat:@".%llu",valueN];
+        [s appendFormat:@".%lld",(long long)valueN];
         valueN = [self grabInteger:bytes atPosition:&pos max:len];
     }
     return s;
