@@ -44,6 +44,7 @@ NSString *BinaryToNSString(const unsigned char *str, int size);
 - (UMASN1Object *)initWithASN1Object:(UMASN1Object *)obj context:(id)context encoding:(UMASN1EncodingType)encodingType;
 - (UMASN1Object *)initWithASN1Object:(UMASN1Object *)obj context:(id)context;
 - (UMASN1Object *)initWithBerData:(NSData *)data atPosition:(NSUInteger *)pos context:(id)context;
+- (UMASN1Object *)initWithBerData:(NSData *)data;
 - (UMASN1Object *)readBerData:(NSData *)data atPosition:(NSUInteger *)pos context:(id)context;
 
 - (NSString *)objectName;
