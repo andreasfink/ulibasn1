@@ -138,6 +138,30 @@ NSString *BinaryToNSString(const unsigned char *str, int size )
     return self;
 }
 
+- (UMASN1Object *)initWithBerData:(NSData *)data
+{
+    self = [super init];
+    if(self)
+    {
+        @try
+        {
+            NSUInteger pos = 0;
+            self = [self readBerData:data atPosition:&pos context:NULL];
+            if(pos != data.length)
+            {
+                @throw([NSException exceptionWithName:@"ASN1_GARBAGE_AFTER_END"
+                                               reason:NULL
+                                             userInfo:NULL]);
+            }
+        }
+        @catch(NSException *e)
+        {
+            @throw(e);
+        }
+        self = [self processAfterDecodeWithContext:NULL];
+    }
+    return self;
+}
 
 - (UMASN1Object *)initWithBerData:(NSData *)data atPosition:(NSUInteger *)pos context:(id)context
 {
