@@ -163,31 +163,6 @@ NSString *BinaryToNSString(const unsigned char *str, int size )
     return self;
 }
 
-- (UMASN1Object *)initWithBerData:(NSData *)data
-{
-    NSUInteger pos = 0;
-    self = [super init];
-    if(self)
-    {
-        @try
-        {
-            self = [self readBerData:data atPosition:&pos context:NULL];
-        }
-        @catch(NSException *e)
-        {
-            @throw(e);
-        }
-        self = [self processAfterDecodeWithContext:NULL];
-    }
-    if(pos != data.length)
-    {
-        @throw([NSException exceptionWithName:@"ASN1_GARBAGE"
-                                       reason:@"more data than expected present"
-                                     userInfo:NULL]);
-    }
-    return self;
-}
-
 - (UMASN1Object *)initWithBerData:(NSData *)data atPosition:(NSUInteger *)pos context:(id)context
 {
     self = [super init];
