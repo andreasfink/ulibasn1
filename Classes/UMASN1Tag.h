@@ -63,14 +63,14 @@ typedef NSInteger   UMASN1TagNumber;
 
 @interface  UMASN1Tag : UMObject
 {
-    UMASN1ClassType                 tagClass;       /*!< Universal,Application,ContextSpecific,Private  */
-    BOOL                            isConstructed;  /*!< if its a sequence of other objects or not */
-    uint64_t                        tagNumber;      /*!< the tag number is always positive */
+    UMASN1ClassType                 _tagClass;       /*!< Universal,Application,ContextSpecific,Private  */
+    BOOL                            _isConstructed;  /*!< if its a sequence of other objects or not */
+    uint64_t                        _tagNumber;      /*!< the tag number is always positive */
 }
 
 @property (readwrite,assign) UMASN1ClassType    tagClass;
 @property (readwrite,assign) uint64_t           tagNumber;
-@property (readwrite,assign) BOOL isConstructed;
+@property (readwrite,assign) BOOL               isConstructed;
 
 - (BOOL) tagIsPrimitive;
 - (BOOL) tagIsConstructed;

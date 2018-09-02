@@ -31,27 +31,24 @@ static inline uint8_t grab_byte(NSData *data,NSUInteger *pos)
 
 @implementation UMASN1Tag
 
-@synthesize tagClass;
-@synthesize tagNumber;
-@synthesize isConstructed;
 
 -(BOOL) tagIsPrimitive
 {
-    return !isConstructed;
+    return !_isConstructed;
 }
 
 - (BOOL)tagIsConstructed
 {
-    return isConstructed;
+    return _isConstructed;
 }
    
 -(void)setTagIsConstructed
 {
-    isConstructed = YES;
+    _isConstructed = YES;
 }
 -(void)setTagIsPrimitive
 {
-    isConstructed = NO;
+    _isConstructed = NO;
 }
 
 /* this only works for tags < 1F */
@@ -64,17 +61,17 @@ static inline uint8_t grab_byte(NSData *data,NSUInteger *pos)
         switch((byte>>6) & 0x3)
         {
             case 1:
-                tagClass = UMASN1Class_Application;
+                _tagClass = UMASN1Class_Application;
                 break;
             case 2:
-                tagClass = UMASN1Class_ContextSpecific;
+                _tagClass = UMASN1Class_ContextSpecific;
                 break;
             case 3:
-                tagClass = UMASN1Class_Private;
+                _tagClass = UMASN1Class_Private;
                 break;
             case 0:
             default:
-                tagClass = UMASN1Class_Universal;
+                _tagClass = UMASN1Class_Universal;
                 break;
         }
 
@@ -100,17 +97,17 @@ static inline uint8_t grab_byte(NSData *data,NSUInteger *pos)
         switch((byte>>6) & 0x3)
         {
             case 1:
-                tagClass = UMASN1Class_Application;
+                _tagClass = UMASN1Class_Application;
                 break;
             case 2:
-                tagClass = UMASN1Class_ContextSpecific;
+                _tagClass = UMASN1Class_ContextSpecific;
                 break;
             case 3:
-                tagClass = UMASN1Class_Private;
+                _tagClass = UMASN1Class_Private;
                 break;
             case 0:
             default:
-                tagClass = UMASN1Class_Universal;
+                _tagClass = UMASN1Class_Universal;
                 break;
         }
 
@@ -122,17 +119,17 @@ static inline uint8_t grab_byte(NSData *data,NSUInteger *pos)
         {
             [self setTagIsPrimitive];
         }
-        tagNumber = byte & 0x1F;
-        if(tagNumber == 0x1F) /* all bits set */
+        _tagNumber = byte & 0x1F;
+        if(_tagNumber == 0x1F) /* all bits set */
         {
-            tagNumber = 0;
+            _tagNumber = 0;
             uint8_t bit7;
             do
             {
                 byte = grab_byte(data,pos);
                 bit7 = byte & 0x80;
-                tagNumber = tagNumber << 7;
-                tagNumber = tagNumber | (byte & 0x1F);
+                _tagNumber = _tagNumber << 7;
+                _tagNumber = _tagNumber | (byte & 0x1F);
             } while (bit7!=0);
         }
     }
@@ -142,7 +139,7 @@ static inline uint8_t grab_byte(NSData *data,NSUInteger *pos)
 - (NSString *)description
 {
     NSMutableString *s = [[NSMutableString alloc] init];
-    switch(tagClass)
+    switch(_tagClass)
     {
         case UMASN1Class_Universal:
             [s appendString:@"UNIVERSAL"];
@@ -157,9 +154,9 @@ static inline uint8_t grab_byte(NSData *data,NSUInteger *pos)
             [s appendString:@"PRIVATE"];
             break;
     }
-    [s appendFormat:@" [%lu] ",(unsigned long)tagNumber];
+    [s appendFormat:@" [%lu] ",(unsigned long)_tagNumber];
     
-    if(isConstructed)
+    if(_isConstructed)
     {
         [s appendString:@"CONSTRUCTED"];
     }
@@ -174,12 +171,12 @@ static inline uint8_t grab_byte(NSData *data,NSUInteger *pos)
 - (NSString *)name
 {
     NSString *c;
-    switch(tagClass)
+    switch(_tagClass)
     {
         case UMASN1Class_Universal:
         {
             c = @"Universal";
-            switch(tagNumber)
+            switch(_tagNumber)
             {
                 case 1:
                     return @"BOOLEAN";
@@ -251,28 +248,28 @@ static inline uint8_t grab_byte(NSData *data,NSUInteger *pos)
             c = @"Private";
             break;
     }
-    return [NSString stringWithFormat: @"%@_%@",c,@(tagNumber)];    
+    return [NSString stringWithFormat: @"%@_%@",c,@(_tagNumber)];
 }
 
 - (NSData *)berEncoded
 {
     NSMutableData *data = [[NSMutableData alloc]init];
-    unsigned char byte = (tagClass & 0x3) << 6;
+    unsigned char byte = (_tagClass & 0x3) << 6;
     if(self.tagIsConstructed)
     {
         byte = byte | 0x20;
     }
-    if(tagNumber < 31)
+    if(_tagNumber < 31)
     {
         /* simple case: 1 byte identifier */
-        byte = byte | (tagNumber & 0x1F);
+        byte = byte | (_tagNumber & 0x1F);
         [data appendBytes:&byte length:1];
         return data;
     }
     byte = byte | 0x1F;
     [data appendBytes:&byte length:1];
     
-    uint64_t i = tagNumber;
+    uint64_t i = _tagNumber;
     
     unsigned char bytes[16];
     if(i < (1LL << 7)) /* 7 bits */
