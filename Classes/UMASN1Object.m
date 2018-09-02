@@ -109,11 +109,6 @@ NSString *BinaryToNSString(const unsigned char *str, int size )
 
 @implementation UMASN1Object
 
-@synthesize asn1_tag;
-@synthesize asn1_length;
-@synthesize asn1_list;
-@synthesize encodingType;
-
 -(BOOL)isEndOfContents
 {
     if( (asn1_tag.tagClass == UMASN1Class_Universal) &&
