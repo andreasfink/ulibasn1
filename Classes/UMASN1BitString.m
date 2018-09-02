@@ -23,9 +23,9 @@
     self = [super init];
     if(self)
     {
-        asn1_tag.tagClass = UMASN1Class_Universal;
-        [asn1_tag setTagIsPrimitive];
-        asn1_tag.tagNumber = UMASN1Primitive_bitstring;
+        self.asn1_tag.tagClass = UMASN1Class_Universal;
+        [self.asn1_tag setTagIsPrimitive];
+        self.asn1_tag.tagNumber = UMASN1Primitive_bitstring;
         [self setValue:d bitcount:bc];
     }
     return self;
@@ -101,7 +101,7 @@
 
 - (NSString *)objectValue
 {
-    return [asn1_data hexString];
+    return [self.asn1_data hexString];
 }
 
 

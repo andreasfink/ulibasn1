@@ -13,8 +13,8 @@
 - (void)processBeforeEncode
 {
     [super processBeforeEncode];
-    asn1_tag.tagClass = UMASN1Class_Universal;
-    asn1_tag.tagNumber = UMASN1Primitive_object_descriptor;
+    self.asn1_tag.tagClass = UMASN1Class_Universal;
+    self.asn1_tag.tagNumber = UMASN1Primitive_object_descriptor;
 }
 
 + (uint64_t)classTagNumber

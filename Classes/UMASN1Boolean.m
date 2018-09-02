@@ -22,9 +22,9 @@
     self = [super init];
     if(self)
     {
-        asn1_tag.tagClass = UMASN1Class_Universal;
-        [asn1_tag setTagIsPrimitive];
-        asn1_tag.tagNumber = UMASN1Primitive_boolean;
+        self.asn1_tag.tagClass = UMASN1Class_Universal;
+        [self.asn1_tag setTagIsPrimitive];
+        self.asn1_tag.tagNumber = UMASN1Primitive_boolean;
     }
     return self;
 }
@@ -35,9 +35,9 @@
     self = [super init];
     if(self)
     {
-        asn1_tag.tagClass = UMASN1Class_Universal;
-        [asn1_tag setTagIsPrimitive];
-        asn1_tag.tagNumber = UMASN1Primitive_boolean;
+        self.asn1_tag.tagClass = UMASN1Class_Universal;
+        [self.asn1_tag setTagIsPrimitive];
+        self.asn1_tag.tagNumber = UMASN1Primitive_boolean;
         [self setValue:v];
     }
     return self;
@@ -64,8 +64,8 @@
     {
         byte = 0x00;
     }
-    asn1_data = [NSData dataWithBytes:&byte length:1];
-    [asn1_length setLength:1];
+    self.asn1_data = [NSData dataWithBytes:&byte length:1];
+    [self.asn1_length setLength:1];
 }
 
 
@@ -76,7 +76,7 @@
 
 - (BOOL)isFalse
 {
-    if((*(uint8_t *)asn1_data.bytes) == 0x00)
+    if((*(uint8_t *)self.asn1_data.bytes) == 0x00)
     {
         return YES;
     }

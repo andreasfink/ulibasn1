@@ -19,8 +19,8 @@
     self = [super init];
     if(self)
     {
-        asn1_tag.tagClass = UMASN1Class_Universal;
-        asn1_tag.tagNumber = UMASN1Primitive_choice;
+        self.asn1_tag.tagClass = UMASN1Class_Universal;
+        self.asn1_tag.tagNumber = UMASN1Primitive_choice;
     }
     return self;
 }

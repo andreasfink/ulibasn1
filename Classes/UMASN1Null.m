@@ -18,9 +18,9 @@
     self = [super init];
     if(self)
     {
-        asn1_tag.tagClass = UMASN1Class_Universal;
-        [asn1_tag setTagIsPrimitive];
-        asn1_tag.tagNumber = UMASN1Primitive_null;
+        self.asn1_tag.tagClass = UMASN1Class_Universal;
+        [self.asn1_tag setTagIsPrimitive];
+        self.asn1_tag.tagNumber = UMASN1Primitive_null;
         self.asn1_data = [NSData data];
     }
     return self;

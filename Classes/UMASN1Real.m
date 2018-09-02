@@ -18,9 +18,9 @@
     self = [super init];
     if(self)
     {
-        asn1_tag.tagClass = UMASN1Class_Universal;
-        [asn1_tag setTagIsPrimitive];
-        asn1_tag.tagNumber = UMASN1Primitive_real;
+        self.asn1_tag.tagClass = UMASN1Class_Universal;
+        [self.asn1_tag setTagIsPrimitive];
+        self.asn1_tag.tagNumber = UMASN1Primitive_real;
         [self setValue:r];
     }
     return self;
@@ -28,7 +28,7 @@
 
 - (BOOL) isPlusInfinity
 {
-    if ((asn1_data.length == 1) && ((*(uint8_t *)(asn1_data.bytes)) == 0x40))
+    if ((self.asn1_data.length == 1) && ((*(uint8_t *)(self.asn1_data.bytes)) == 0x40))
     {
         return YES;
     }
@@ -37,7 +37,7 @@
 
 - (BOOL) isMinusInfinity
 {
-    if ((asn1_data.length == 1) && ((*(uint8_t *)(asn1_data.bytes)) == 0x41))
+    if ((self.asn1_data.length == 1) && ((*(uint8_t *)(self.asn1_data.bytes)) == 0x41))
     {
         return YES;
     }
@@ -46,7 +46,7 @@
 
 - (BOOL) isNotANumber
 {
-    if ((asn1_data.length == 1) && ((*(uint8_t *)(asn1_data.bytes)) == 0x42))
+    if ((self.asn1_data.length == 1) && ((*(uint8_t *)(self.asn1_data.bytes)) == 0x42))
     {
         return YES;
     }
@@ -56,7 +56,7 @@
 
 - (BOOL) isMinusZero
 {
-    if ((asn1_data.length == 1) && ((*(uint8_t *)(asn1_data.bytes)) == 0x43))
+    if ((self.asn1_data.length == 1) && ((*(uint8_t *)(self.asn1_data.bytes)) == 0x43))
     {
         return YES;
     }
@@ -65,8 +65,8 @@
 
 - (BOOL) isZero
 {
-    if ((asn1_length.length == 0)
-        && (asn1_length.undefinedLength == NO))
+    if ((self.asn1_length.length == 0)
+        && (self.asn1_length.undefinedLength == NO))
     {
         return YES;
     }
@@ -76,47 +76,42 @@
 - (void) setValueToPlusInfinity
 {
     uint8_t byte = 0x40;
-    asn1_data = [NSData dataWithBytes:&byte length:1];
-    asn1_length.length = asn1_data.length;
+    self.asn1_data = [NSData dataWithBytes:&byte length:1];
 }
 
 - (void) setValueToMinusInfinity
 {
     uint8_t byte = 0x41;
-    asn1_data = [NSData dataWithBytes:&byte length:1];
-    asn1_length.length = asn1_data.length;
+    self.asn1_data = [NSData dataWithBytes:&byte length:1];
 }
 
 - (void) setValueToIsNotANumber
 {
     uint8_t byte = 0x42;
-    asn1_data = [NSData dataWithBytes:&byte length:1];
-    asn1_length.length = asn1_data.length;
+    self.asn1_data = [NSData dataWithBytes:&byte length:1];
 }
 
 
 - (void) setValueToMinusZero
 {
     uint8_t byte = 0x43;
-    asn1_data = [NSData dataWithBytes:&byte length:1];
-    asn1_length.length = asn1_data.length;
+    self.asn1_data = [NSData dataWithBytes:&byte length:1];
 }
 
 - (void) setValueToZero
 {
-    asn1_data = [[NSData alloc] init];
-    asn1_length.length = 0;
+    self.asn1_data = [[NSData alloc] init];
 }
 
 - (double) value
 {
-    NSInteger length = asn1_length.length;
+    NSInteger length = self.asn1_length.length;
     if(length==0)
     {
         return 0.00;
     }
    
-    const uint8_t *bytes = asn1_data.bytes;
+    const uint8_t *bytes = self.asn1_data.bytes;
     uint8_t firstByte = *bytes;
     
     if(firstByte & 0x80)

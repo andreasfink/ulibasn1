@@ -15,7 +15,7 @@
     self = [super init];
     if(self)
     {
-        [asn1_tag setTagIsPrimitive];
+        [self.asn1_tag setTagIsPrimitive];
     }
     return self;
 }
@@ -26,7 +26,7 @@
     self = [super initWithBerData:data atPosition:pos context:context];
     if(self)
     {
-        [asn1_tag setTagIsPrimitive];
+        [self.asn1_tag setTagIsPrimitive];
     }
     return self;
 }

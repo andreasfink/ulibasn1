@@ -25,12 +25,12 @@ NSString *BinaryToNSString(const unsigned char *str, int size);
 
 @interface UMASN1Object : UMObject
 {
-    UMASN1Tag       *asn1_tag;
-    UMASN1Length    *asn1_length;
-    NSData          *asn1_data;
-    NSMutableArray  *asn1_list;
-    BOOL            encodingPreparationDone;
-    UMASN1EncodingType encodingType;
+    UMASN1Tag       *_asn1_tag;
+    UMASN1Length    *_asn1_length;
+    NSData          *_asn1_data;
+    NSMutableArray  *_asn1_list;
+    BOOL            _encodingPreparationDone;
+    UMASN1EncodingType _encodingType;
 }
 
 @property(readwrite,strong) UMASN1Tag       *asn1_tag;

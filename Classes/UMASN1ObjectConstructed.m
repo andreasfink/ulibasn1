@@ -16,8 +16,8 @@
     self = [super init];
     if(self)
     {
-        [asn1_tag setTagIsConstructed];
-        asn1_list = [[NSMutableArray alloc]init];
+        [self.asn1_tag setTagIsConstructed];
+        self.asn1_list = [[NSMutableArray alloc]init];
     }
     return self;
 }

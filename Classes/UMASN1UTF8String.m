@@ -23,9 +23,9 @@
     self = [super init];
     if(self)
     {
-        asn1_tag.tagClass = UMASN1Class_Universal;
-        [asn1_tag setTagIsPrimitive];
-        asn1_tag.tagNumber = UMASN1Primitive_UTF8String;
+        self.asn1_tag.tagClass = UMASN1Class_Universal;
+        [self.asn1_tag setTagIsPrimitive];
+        self.asn1_tag.tagNumber = UMASN1Primitive_UTF8String;
         self.value =s;
     }
     return self;
@@ -40,7 +40,7 @@
 - (void) setValue:(NSString *)s
 {
     self.asn1_data = [s dataUsingEncoding:NSUTF8StringEncoding];
-    self.asn1_length.length = asn1_data.length;
+    self.asn1_length.length = self.asn1_data.length;
 }
 
 - (NSString *)objectName
@@ -50,7 +50,7 @@
 
 - (id) objectValue
 {
-    return [[NSString alloc]initWithData:asn1_data encoding:NSUTF8StringEncoding];
+    return [[NSString alloc]initWithData:self.asn1_data encoding:NSUTF8StringEncoding];
 }
 
 + (uint64_t)classTagNumber

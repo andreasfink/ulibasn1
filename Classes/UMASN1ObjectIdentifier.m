@@ -13,8 +13,8 @@
 - (void)processBeforeEncode
 {
     [super processBeforeEncode];
-    asn1_tag.tagClass = UMASN1Class_Universal;
-    asn1_tag.tagNumber = UMASN1Primitive_object_identifier;
+    self.asn1_tag.tagClass = UMASN1Class_Universal;
+    self.asn1_tag.tagNumber = UMASN1Primitive_object_identifier;
 }
 
 
@@ -50,9 +50,9 @@
     self = [super init];
     if(self)
     {
-        [asn1_tag setTagIsPrimitive];
-        asn1_tag.tagClass = UMASN1Class_Universal;
-        asn1_tag.tagNumber = UMASN1Primitive_object_identifier;
+        [self.asn1_tag setTagIsPrimitive];
+        self.asn1_tag.tagClass = UMASN1Class_Universal;
+        self.asn1_tag.tagNumber = UMASN1Primitive_object_identifier;
         self.asn1_data = d;
     }
     return self;
@@ -203,7 +203,7 @@
 
 - (NSData *)value
 {
-    return [asn1_data copy];
+    return [self.asn1_data copy];
 }
 
 
@@ -231,8 +231,8 @@
 - (NSString *)oidString
 {
     NSMutableString *s = [[NSMutableString alloc]init];
-    const uint8_t *bytes = [asn1_data bytes];
-    NSUInteger len = [asn1_data length];
+    const uint8_t *bytes = [self.asn1_data bytes];
+    NSUInteger len = [self.asn1_data length];
 
     NSUInteger pos = 0;
     int64_t value0;

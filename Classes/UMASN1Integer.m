@@ -21,9 +21,9 @@
     self = [super init];
     if(self)
     {
-        asn1_tag.tagClass = UMASN1Class_Universal;
-        [asn1_tag setTagIsPrimitive];
-        asn1_tag.tagNumber = UMASN1Primitive_integer;
+        self.asn1_tag.tagClass = UMASN1Class_Universal;
+        [self.asn1_tag setTagIsPrimitive];
+        self.asn1_tag.tagNumber = UMASN1Primitive_integer;
         [self setValue:0];
     }
     return self;
@@ -34,9 +34,9 @@
     self = [super init];
     if(self)
     {
-        asn1_tag.tagClass = UMASN1Class_Universal;
-        [asn1_tag setTagIsPrimitive];
-        asn1_tag.tagNumber = UMASN1Primitive_integer;
+        self.asn1_tag.tagClass = UMASN1Class_Universal;
+        [self.asn1_tag setTagIsPrimitive];
+        self.asn1_tag.tagNumber = UMASN1Primitive_integer;
         [self setValue:i];
     }
     return self;
@@ -66,15 +66,15 @@
 - (int64_t)value
 {
     uint8_t buf[8];
-    if(asn1_data==NULL)
+    if(self.asn1_data==NULL)
     {
         return 0;
     }
-    if(([asn1_data length]<1) ||  ([asn1_data length]> 8))
+    if(([self.asn1_data length]<1) ||  ([self.asn1_data length]> 8))
     {
         return 0;
     }
-    uint8_t *bytes = (uint8_t *)asn1_data.bytes;
+    uint8_t *bytes = (uint8_t *)self.asn1_data.bytes;
     if(*bytes & 0x80)
     {
         memset(buf,0xFF,sizeof(buf));
@@ -83,8 +83,8 @@
     {
         memset(buf,0x00,sizeof(buf));
     }
-    size_t startpos = 8 - asn1_data.length;
-    memcpy(&buf[startpos],asn1_data.bytes,asn1_data.length);
+    size_t startpos = 8 - self.asn1_data.length;
+    memcpy(&buf[startpos],self.asn1_data.bytes,self.asn1_data.length);
     
     uint64_t v = 0;
     v = v | (((uint64_t)buf[0]) <<  56);
@@ -116,15 +116,13 @@
     if(val == 0)
     {
         uint8_t byte = 0;
-        asn1_data = [NSData dataWithBytes:&byte length:1];
-        [asn1_length setLength:asn1_data.length];
+        self.asn1_data = [NSData dataWithBytes:&byte length:1];
         return;
     }
     else if(val == -1)
     {
         uint8_t byte = 0xFF;
-        asn1_data = [NSData dataWithBytes:&byte length:1];
-        [asn1_length setLength:asn1_data.length];
+        self.asn1_data = [NSData dataWithBytes:&byte length:1];
         return;
     }
     /* Compute the number of superfluous leading bytes */
@@ -149,8 +147,7 @@
         break;
     }
     /* Remove leading superfluous bytes from the integer */
-    asn1_data = [NSData dataWithBytes:start length:end-start];
-    [asn1_length setLength:asn1_data.length];
+    self.asn1_data = [NSData dataWithBytes:start length:end-start];
 }
 
 - (void)processBeforeEncode

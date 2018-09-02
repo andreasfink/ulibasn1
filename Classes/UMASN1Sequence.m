@@ -20,9 +20,9 @@
     self = [super init];
     if(self)
     {
-        asn1_tag.tagClass = UMASN1Class_Universal;
-        asn1_tag.tagNumber = UMASN1Primitive_sequence;
-        asn1_tag.isConstructed = YES;
+        self.asn1_tag.tagClass = UMASN1Class_Universal;
+        self.asn1_tag.tagNumber = UMASN1Primitive_sequence;
+        self.asn1_tag.isConstructed = YES;
 		[self setValues:arr];
     }
     return self;
@@ -30,7 +30,7 @@
 
 - (NSArray *) values
 {
-    return [NSArray arrayWithArray:asn1_list];
+    return [NSArray arrayWithArray:self.asn1_list];
 }
 
 - (void) setValues:(NSArray *)arr
@@ -47,7 +47,7 @@
 - (void)processBeforeEncode
 {
     [super processBeforeEncode];
-    [asn1_tag setTagIsConstructed];
+    [self.asn1_tag setTagIsConstructed];
 }
 
 - (NSString *)objectName

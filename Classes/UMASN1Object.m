@@ -217,7 +217,7 @@ NSString *BinaryToNSString(const unsigned char *str, int size )
             }
             else // isConstructed
             {
-                asn1_data = NULL;
+                self.asn1_data = NULL;
                 NSData *constructedData  = NULL;
                 constructedData = grab_bytes(data,pos,self.asn1_length.length,self );
                 asn1_list = [[NSMutableArray alloc]init];
@@ -322,22 +322,22 @@ NSString *BinaryToNSString(const unsigned char *str, int size )
 
 - (NSData *)asn1_data
 {
-    return asn1_data;
+    return _asn1_data;
 }
 
 - (void)setAsn1_data:(NSData *)d
 {
-    asn1_data = d;
-    asn1_length.length = d.length;
-    [asn1_tag setTagIsPrimitive];
-    asn1_list = NULL;
+    _asn1_data = d;
+    _asn1_length.length = d.length;
+    [_asn1_tag setTagIsPrimitive];
+    _asn1_list = NULL;
 }
 
 - (NSString *)description
 {
     NSMutableString *s = [[NSMutableString alloc]init];
     
-    if(encodingPreparationDone==NO)
+    if(_encodingPreparationDone==NO)
     {
         [self processBeforeEncode];
     }
@@ -345,11 +345,11 @@ NSString *BinaryToNSString(const unsigned char *str, int size )
     [s appendString:@"\t"];
     [s appendString:asn1_length.description];
     [s appendString:@"\t"];
-    if(asn1_tag.tagIsPrimitive)
+    if(_asn1_tag.tagIsPrimitive)
     {
-        if(asn1_data.length  > 0)
+        if(_asn1_data.length  > 0)
         {
-            [s appendString:asn1_data.description];
+            [s appendString:_asn1_data.description];
             [s appendString:@"\n"];
         }
         else
@@ -357,7 +357,7 @@ NSString *BinaryToNSString(const unsigned char *str, int size )
             [s appendString:@"<>\n\n"];
         }
     }
-    if(asn1_tag.isConstructed)
+    if(_asn1_tag.isConstructed)
     {
         [s appendString:@"\n{\n"];
         for(UMASN1Object *item in asn1_list)
@@ -495,8 +495,8 @@ NSString *BinaryToNSString(const unsigned char *str, int size )
 
 - (NSString *)integerDataAsStringValue
 {
-    const uint8_t *bytes = asn1_data.bytes;
-    NSUInteger len  = asn1_data.length;
+    const uint8_t *bytes = self.asn1_data.bytes;
+    NSUInteger len  = self.asn1_data.length;
     NSUInteger value = 0;
     for(NSUInteger i=0;i<len;i++)
     {
@@ -515,8 +515,8 @@ NSString *BinaryToNSString(const unsigned char *str, int size )
 {
     NSMutableString *s = [[NSMutableString alloc]init];
     
-    const uint8_t *bytes = asn1_data.bytes;
-    NSUInteger len  = asn1_data.length;
+    const uint8_t *bytes = self.asn1_data.bytes;
+    NSUInteger len  = self.asn1_data.length;
 
     for(NSUInteger i =0;i<len;i++)
     {
@@ -545,8 +545,8 @@ NSString *BinaryToNSString(const unsigned char *str, int size )
 - (NSString *)imsiValue
 {
     NSMutableString *s = [[NSMutableString alloc]init];
-    const uint8_t *bytes = asn1_data.bytes;
-    NSUInteger len = asn1_data.length;
+    const uint8_t *bytes = self.asn1_data.bytes;
+    NSUInteger len = self.asn1_data.length;
     
     for(NSUInteger i=0;i<len;i++)
     {
@@ -567,8 +567,8 @@ NSString *BinaryToNSString(const unsigned char *str, int size )
 
 - (NSString *)isdnValue
 {
-    const uint8_t *bytes = asn1_data.bytes;
-    NSUInteger size = asn1_data.length;
+    const uint8_t *bytes = self.asn1_data.bytes;
+    NSUInteger size = self.asn1_data.length;
 
     return BinaryToNSString(bytes, (int)size);
 }
@@ -577,12 +577,12 @@ NSString *BinaryToNSString(const unsigned char *str, int size )
 {
     if(asn1_tag.tagClass==UMASN1Class_Universal)
     {
-        if(asn1_data==NULL)
+        if(self.asn1_data==NULL)
         {
             return @"";
         }
-        const uint8_t *bytes = asn1_data.bytes;
-        NSUInteger len  = asn1_data.length;
+        const uint8_t *bytes = self.asn1_data.bytes;
+        NSUInteger len  = self.asn1_data.length;
         if(len==0)
         {
             return @"";
@@ -650,14 +650,14 @@ NSString *BinaryToNSString(const unsigned char *str, int size )
 {
     if(asn1_tag.tagIsPrimitive)
     {
-        if(asn1_data.length==0)
+        if(self.asn1_data.length==0)
         {
             return @"";
         }
         else
         {
             /* FIXME: return integer for INTEGER type  instead of its hex bytes */
-            return [asn1_data hexString];
+            return [self.asn1_data hexString];
         }
     }
     else if(asn1_tag.isConstructed)
@@ -712,9 +712,9 @@ NSString *BinaryToNSString(const unsigned char *str, int size )
             break;
         
     }
-    if((asn1_tag.tagIsPrimitive) && (asn1_data))
+    if((asn1_tag.tagIsPrimitive) && (self.asn1_data))
     {
-        d[@"data"] = asn1_data;
+        d[@"data"] = self.asn1_data;
     }
     else if((asn1_tag.tagIsConstructed) && (asn1_list))
     {

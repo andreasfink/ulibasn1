@@ -20,8 +20,8 @@
     self = [super init];
     if(self)
     {
-        asn1_tag.tagClass = UMASN1Class_Universal;
-        [asn1_tag setTagIsConstructed];
+        self.asn1_tag.tagClass = UMASN1Class_Universal;
+        [self.asn1_tag setTagIsConstructed];
        // asn1_tag.tagNumber = UMASN1Primitive_set;
 		[self setValues:arr];
     }
@@ -30,7 +30,7 @@
 
 - (NSArray *) values
 {
-    return [NSArray arrayWithArray:asn1_list];
+    return [NSArray arrayWithArray:self.asn1_list];
 }
 
 - (void) setValues:(NSArray *)arr
