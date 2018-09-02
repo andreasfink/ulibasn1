@@ -19,7 +19,7 @@ typedef enum    UMASN1ChoiceType
 
 @interface UMASN1Choice : UMASN1Object
 {
-    UMASN1ChoiceType choiceType;
+    UMASN1ChoiceType _choiceType;
 }
 
 @property(readwrite) UMASN1ChoiceType choiceType;

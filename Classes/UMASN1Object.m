@@ -342,9 +342,13 @@ NSString *BinaryToNSString(const unsigned char *str, int size )
     [s appendString:@"\t"];
     if(_asn1_tag.tagIsPrimitive)
     {
-        if(_asn1_data.length  > 0)
+        if(_asn1_data==NULL)
         {
-            [s appendString:_asn1_data.description];
+            [s appendString:@"(null)\n"];
+        }
+        else if(_asn1_data.length  > 0)
+        {
+            [s appendString:[_asn1_data description]];
             [s appendString:@"\n"];
         }
         else

@@ -12,15 +12,13 @@
 
 @implementation UMASN1Choice
 
-@synthesize choiceType;
-
 - (UMASN1Choice *)init
 {
     self = [super init];
     if(self)
     {
-        self.asn1_tag.tagClass = UMASN1Class_Universal;
-        self.asn1_tag.tagNumber = UMASN1Primitive_choice;
+        _asn1_tag.tagClass = UMASN1Class_Universal;
+        _asn1_tag.tagNumber = UMASN1Primitive_choice;
     }
     return self;
 }
