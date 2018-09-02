@@ -180,8 +180,8 @@ NSString *BinaryToNSString(const unsigned char *str, int size )
 {
     @try
     {
-        self.asn1_tag = [[UMASN1Tag alloc]initWithBerData:data atPosition:pos context:context];
-        if(self.asn1_tag == NULL)
+        _asn1_tag = [[UMASN1Tag alloc]initWithBerData:data atPosition:pos context:context];
+        if(_asn1_tag == NULL)
         {
             @throw([NSException exceptionWithName:@"ASN1_CAN_NOT_READ_TAG"
                                            reason:NULL
@@ -192,43 +192,43 @@ NSString *BinaryToNSString(const unsigned char *str, int size )
                                                     }
                     ]);
         }
-        self.asn1_length = [[UMASN1Length alloc]initWithBerData:data atPosition:pos context:context];
+        _asn1_length = [[UMASN1Length alloc]initWithBerData:data atPosition:pos context:context];
         /* FIXME: is this really correct ? */
-        if( (self.asn1_tag.tagClass == UMASN1Class_Universal) &&
-           (self.asn1_tag.tagIsPrimitive) &&
-           (self.asn1_tag.tagNumber == 0) &&
-           (self.asn1_length.length == 0) )
+        if( (_asn1_tag.tagClass == UMASN1Class_Universal) &&
+           (_asn1_tag.tagIsPrimitive) &&
+           (_asn1_tag.tagNumber == 0) &&
+           (_asn1_length.length == 0) )
 
         {
             return self;
         }
-        if(self.asn1_length.undefinedLength == NO)
+        if(_asn1_length.undefinedLength == NO)
         {
-            if(self.asn1_tag.tagIsPrimitive)
+            if(_asn1_tag.tagIsPrimitive)
             {
                 /* exact length is known */
-                self.asn1_data = grab_bytes(data,pos,self.asn1_length.length,self );
+                _asn1_data = grab_bytes(data,pos,_asn1_length.length,self );
                 _asn1_list = NULL;
             }
             else // isConstructed
             {
-                self.asn1_data = NULL;
+                _asn1_data = NULL;
                 NSData *constructedData  = NULL;
-                constructedData = grab_bytes(data,pos,self.asn1_length.length,self );
+                constructedData = grab_bytes(data,pos,_asn1_length.length,self );
                 _asn1_list = [[NSMutableArray alloc]init];
                 NSUInteger p2=0;
-                while(p2 < self.asn1_length.length)
+                while(p2 < _asn1_length.length)
                 {
                     UMASN1Object *the_list_item = [[UMASN1Object alloc]initWithBerData:constructedData atPosition:&p2 context:context];
                     if(the_list_item)
                     {
                         if(the_list_item.isEndOfContents == NO)
                         {
-                            [self.asn1_list addObject:the_list_item];
+                            [_asn1_list addObject:the_list_item];
                         }
                     }
                     
-                    if(!(self.asn1_length.undefinedLength) && (p2 >= self.asn1_length.length))
+                    if(!(_asn1_length.undefinedLength) && (p2 >= _asn1_length.length))
                     {
                         break;
                     }
