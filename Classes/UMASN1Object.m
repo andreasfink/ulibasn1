@@ -111,10 +111,10 @@ NSString *BinaryToNSString(const unsigned char *str, int size )
 
 -(BOOL)isEndOfContents
 {
-    if( (asn1_tag.tagClass == UMASN1Class_Universal) &&
-        (asn1_tag.tagIsPrimitive) &&
-        (asn1_tag.tagNumber == 0) &&
-        (asn1_length.length == 0) )
+    if( (_asn1_tag.tagClass == UMASN1Class_Universal) &&
+        (_asn1_tag.tagIsPrimitive) &&
+        (_asn1_tag.tagNumber == 0) &&
+        (_asn1_length.length == 0) )
     {
         return YES;
     }
@@ -127,8 +127,8 @@ NSString *BinaryToNSString(const unsigned char *str, int size )
     self = [super init];
     if(self)
     {
-        asn1_tag    = [[UMASN1Tag alloc]init];
-        asn1_length = [[UMASN1Length alloc]init];
+        _asn1_tag    = [[UMASN1Tag alloc]init];
+        _asn1_length = [[UMASN1Length alloc]init];
     }
     return self;
 }
@@ -208,14 +208,14 @@ NSString *BinaryToNSString(const unsigned char *str, int size )
             {
                 /* exact length is known */
                 self.asn1_data = grab_bytes(data,pos,self.asn1_length.length,self );
-                asn1_list = NULL;
+                _asn1_list = NULL;
             }
             else // isConstructed
             {
                 self.asn1_data = NULL;
                 NSData *constructedData  = NULL;
                 constructedData = grab_bytes(data,pos,self.asn1_length.length,self );
-                asn1_list = [[NSMutableArray alloc]init];
+                _asn1_list = [[NSMutableArray alloc]init];
                 NSUInteger p2=0;
                 while(p2 < self.asn1_length.length)
                 {
@@ -336,9 +336,9 @@ NSString *BinaryToNSString(const unsigned char *str, int size )
     {
         [self processBeforeEncode];
     }
-    [s appendString:asn1_tag.description];
+    [s appendString:_asn1_tag.description];
     [s appendString:@"\t"];
-    [s appendString:asn1_length.description];
+    [s appendString:_asn1_length.description];
     [s appendString:@"\t"];
     if(_asn1_tag.tagIsPrimitive)
     {
@@ -355,7 +355,7 @@ NSString *BinaryToNSString(const unsigned char *str, int size )
     if(_asn1_tag.isConstructed)
     {
         [s appendString:@"\n{\n"];
-        for(UMASN1Object *item in asn1_list)
+        for(UMASN1Object *item in _asn1_list)
         {
             NSString *item_description = item.description;
             NSArray *lines = [item_description componentsSeparatedByString:@"\n"];
@@ -375,7 +375,7 @@ NSString *BinaryToNSString(const unsigned char *str, int size )
 
 - (NSString *)objectName
 {
-    return asn1_tag.name;
+    return _asn1_tag.name;
 }
 
 - (NSString *)objectOperation
@@ -385,28 +385,28 @@ NSString *BinaryToNSString(const unsigned char *str, int size )
 
 - (UMASN1Object *)getObjectAtPosition:(NSUInteger)pos
 {
-    if(asn1_tag == NULL)
+    if(_asn1_tag == NULL)
     {
         return NULL;
     }  
-    if(!asn1_tag.isConstructed)
+    if(!_asn1_tag.isConstructed)
     {
         //NSLog(@"trying to read object at position %lu from a ASN1 object which is not a CONSTRUCTED one",(unsigned long)pos);
         return NULL;
     }
 
-    if(pos >= asn1_list.count)
+    if(pos >= _asn1_list.count)
     {
         //NSLog(@"trying to read object at position %lu while we only have %lu objets",(unsigned long)pos,(unsigned long)asn1_list.count);
         return NULL;
     }
-    UMASN1Object *o = [asn1_list objectAtIndex:pos];
+    UMASN1Object *o = [_asn1_list objectAtIndex:pos];
     return o;
 }
 
 - (UMASN1Object *)getObjectWithTagNumber:(NSUInteger)nr
 {
-    for(UMASN1Object *o in asn1_list)
+    for(UMASN1Object *o in _asn1_list)
     {
         if(o.asn1_tag.tagNumber == nr)
         {
@@ -418,7 +418,7 @@ NSString *BinaryToNSString(const unsigned char *str, int size )
 
 - (UMASN1Object *)getPrivateObjectWithTagNumber:(NSUInteger)nr
 {
-    for(UMASN1Object *o in asn1_list)
+    for(UMASN1Object *o in _asn1_list)
     {
         if((o.asn1_tag.tagNumber == nr) && (o.asn1_tag.tagClass == UMASN1Class_Private))
         {
@@ -430,7 +430,7 @@ NSString *BinaryToNSString(const unsigned char *str, int size )
 
 - (UMASN1Object *)getUniversalObjectWithTagNumber:(NSUInteger)nr
 {
-    for(UMASN1Object *o in asn1_list)
+    for(UMASN1Object *o in _asn1_list)
     {
         if((o.asn1_tag.tagNumber == nr) && (o.asn1_tag.tagClass == UMASN1Class_Universal))
         {
@@ -442,7 +442,7 @@ NSString *BinaryToNSString(const unsigned char *str, int size )
 
 - (UMASN1Object *)getApplicationSpecificObjectWithTagNumber:(NSUInteger)nr
 {
-    for(UMASN1Object *o in asn1_list)
+    for(UMASN1Object *o in _asn1_list)
     {
         if((o.asn1_tag.tagNumber == nr) && (o.asn1_tag.tagClass == UMASN1Class_Application))
         {
@@ -454,7 +454,7 @@ NSString *BinaryToNSString(const unsigned char *str, int size )
 
 - (UMASN1Object *)getContextSpecificObjectWithTagNumber:(NSUInteger)nr
 {
-    for(UMASN1Object *o in asn1_list)
+    for(UMASN1Object *o in _asn1_list)
     {
         if((o.asn1_tag.tagNumber == nr) && (o.asn1_tag.tagClass == UMASN1Class_ContextSpecific))
         {
@@ -466,7 +466,7 @@ NSString *BinaryToNSString(const unsigned char *str, int size )
 
 - (UMASN1Object *)getObjectWithTagNumber:(NSUInteger)nr startingAtPosition:(NSUInteger)start
 {
-    for(UMASN1Object *o in asn1_list)
+    for(UMASN1Object *o in _asn1_list)
     {
         if(start > 0)
         {
@@ -529,7 +529,7 @@ NSString *BinaryToNSString(const unsigned char *str, int size )
 
 - (NSString *)rawDataAsStringValue
 {
-    return [NSString stringWithFormat:@"%@:%@",asn1_tag.description,[self octetstringDataAsStringValue]];
+    return [NSString stringWithFormat:@"%@:%@",_asn1_tag.description,[self octetstringDataAsStringValue]];
 }
 
 -(NSString *)nullDataAsStringValue
@@ -570,7 +570,7 @@ NSString *BinaryToNSString(const unsigned char *str, int size )
 
 - (NSString *)stringValue
 {
-    if(asn1_tag.tagClass==UMASN1Class_Universal)
+    if(_asn1_tag.tagClass==UMASN1Class_Universal)
     {
         if(self.asn1_data==NULL)
         {
@@ -582,7 +582,7 @@ NSString *BinaryToNSString(const unsigned char *str, int size )
         {
             return @"";
         }
-        switch (asn1_tag.tagNumber)
+        switch (_asn1_tag.tagNumber)
         {
             case UMASN1Primitive_boolean:
                 return [NSString stringWithFormat:@"%d",(int)bytes[0]];
@@ -629,7 +629,7 @@ NSString *BinaryToNSString(const unsigned char *str, int size )
 
     NSData *identifierData   = [self.asn1_tag berEncoded];
     NSData *contentData      = [self berEncodedContentData];
-    [asn1_length setLength:contentData.length];
+    [_asn1_length setLength:contentData.length];
     NSData *lengthData       = [self.asn1_length berEncoded];
     NSData *endOfData        = [self.asn1_length berEncodedEndOfData];
     
@@ -643,7 +643,7 @@ NSString *BinaryToNSString(const unsigned char *str, int size )
 
 - (id)objectValue
 {
-    if(asn1_tag.tagIsPrimitive)
+    if(_asn1_tag.tagIsPrimitive)
     {
         if(self.asn1_data.length==0)
         {
@@ -655,10 +655,10 @@ NSString *BinaryToNSString(const unsigned char *str, int size )
             return [self.asn1_data hexString];
         }
     }
-    else if(asn1_tag.isConstructed)
+    else if(_asn1_tag.isConstructed)
     {
         UMSynchronizedSortedDictionary *a = [[UMSynchronizedSortedDictionary alloc]init];
-        for(UMASN1Object *o  in asn1_list)
+        for(UMASN1Object *o  in _asn1_list)
         {
             a[o.objectName] = o.objectValue;
         }
@@ -683,7 +683,7 @@ NSString *BinaryToNSString(const unsigned char *str, int size )
 
 - (id)proxyForJson
 {
-    if(asn1_tag == NULL)
+    if(_asn1_tag == NULL)
     {
         return @"(invalid tag)";
     }
@@ -707,14 +707,14 @@ NSString *BinaryToNSString(const unsigned char *str, int size )
             break;
         
     }
-    if((asn1_tag.tagIsPrimitive) && (self.asn1_data))
+    if((_asn1_tag.tagIsPrimitive) && (self.asn1_data))
     {
         d[@"data"] = self.asn1_data;
     }
-    else if((asn1_tag.tagIsConstructed) && (asn1_list))
+    else if((_asn1_tag.tagIsConstructed) && (_asn1_list))
     {
         NSMutableArray *a = [[NSMutableArray alloc]init];
-        for (UMASN1Object *entry in asn1_list)
+        for (UMASN1Object *entry in _asn1_list)
         {
             NSString *s = [entry proxyForJson];
             [a addObject:s];
