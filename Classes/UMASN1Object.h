@@ -27,7 +27,6 @@ NSString *BinaryToNSString(const unsigned char *str, int size);
 {
     UMASN1Tag       *asn1_tag;
     UMASN1Length    *asn1_length;
-
     NSData          *asn1_data;
     NSMutableArray  *asn1_list;
     BOOL            encodingPreparationDone;
@@ -74,7 +73,7 @@ NSString *BinaryToNSString(const unsigned char *str, int size);
 
 + (uint64_t)classTagNumber;
 
-+(BOOL)tagMatches:(uint64_t)tag;
++ (BOOL)tagMatches:(uint64_t)tag;
 + (BOOL)tagMatch:(UMASN1Tag *)t;
 - (id)proxyForJson;
 
