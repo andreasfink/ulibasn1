@@ -315,6 +315,7 @@ NSString *BinaryToNSString(const unsigned char *str, int size )
     //encodingPreparationDone = YES;
 }
 
+/*
 - (NSData *)asn1_data
 {
     return _asn1_data;
@@ -327,6 +328,7 @@ NSString *BinaryToNSString(const unsigned char *str, int size )
     [_asn1_tag setTagIsPrimitive];
     _asn1_list = NULL;
 }
+*/
 
 - (NSString *)description
 {

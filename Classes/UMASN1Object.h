@@ -35,10 +35,7 @@ NSString *BinaryToNSString(const unsigned char *str, int size);
 
 @property(readwrite,strong) UMASN1Tag       *asn1_tag;
 @property(readwrite,strong) UMASN1Length    *asn1_length;
-//@property(readwrite,strong) NSData          *asn1_data;
-- (NSData *)asn1_data;
-- (void)setAsn1_data:(NSData *)d;
-
+@property(readwrite,strong) NSData          *asn1_data;
 @property(readwrite,strong) NSMutableArray  *asn1_list;
 @property(readwrite,assign) UMASN1EncodingType encodingType;
 
