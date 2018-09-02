@@ -674,6 +674,7 @@ NSString *BinaryToNSString(const unsigned char *str, int size )
         return @"";
     }
 }
+
 + (uint64_t)classTagNumber
 {
     return -1;
