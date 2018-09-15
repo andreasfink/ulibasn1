@@ -202,6 +202,8 @@ NSString *BinaryToNSString(const unsigned char *str, int size )
         {
             return self;
         }
+        NSLog(@"Tag: %@",_asn1_tag);
+        NSLog(@"Length: %@",_asn1_length);
         if(_asn1_length.undefinedLength == NO)
         {
             if(_asn1_tag.tagIsPrimitive)
@@ -217,7 +219,7 @@ NSString *BinaryToNSString(const unsigned char *str, int size )
                 constructedData = grab_bytes(data,pos,_asn1_length.length,self );
                 _asn1_list = [[NSMutableArray alloc]init];
                 NSUInteger p2=0;
-                while(p2 < _asn1_length.length)
+                while(p2 < constructedData.length)
                 {
                     UMASN1Object *the_list_item = [[UMASN1Object alloc]initWithBerData:constructedData atPosition:&p2 context:context];
                     if(the_list_item)
@@ -228,13 +230,12 @@ NSString *BinaryToNSString(const unsigned char *str, int size )
                         }
                     }
                     
-                    if(!(_asn1_length.undefinedLength) && (p2 >= _asn1_length.length))
+                    if(!(_asn1_length.undefinedLength) && (p2 >= constructedData.length))
                     {
                         break;
                     }
                 }
             }
-            
         }
         else /* undefined length */
         {
