@@ -202,8 +202,6 @@ NSString *BinaryToNSString(const unsigned char *str, int size )
         {
             return self;
         }
-        NSLog(@"Tag: %@",_asn1_tag);
-        NSLog(@"Length: %@",_asn1_length);
         if(_asn1_length.undefinedLength == NO)
         {
             if(_asn1_tag.tagIsPrimitive)
