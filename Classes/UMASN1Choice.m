@@ -49,5 +49,20 @@
     return NO;
 }
 
+- (void)cloneFrom:(UMASN1Object *)other
+{
+    [other processBeforeEncode];
+    _asn1_tag.tagNumber = other.asn1_tag.tagNumber;
+    _asn1_tag.tagClass = other.asn1_tag.tagClass;
+    _asn1_tag.isConstructed = other.asn1_tag.isConstructed;
+    if(_asn1_tag.isConstructed)
+    {
+        _asn1_list = [other.asn1_list copy];
+    }
+    else
+    {
+        _asn1_data = [other.asn1_data copy];
+    }
+}
 
 @end

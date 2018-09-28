@@ -24,4 +24,6 @@ typedef enum    UMASN1ChoiceType
 
 @property(readwrite) UMASN1ChoiceType choiceType;
 
+- (void)cloneFrom:(UMASN1Object *)other;
+
 @end
