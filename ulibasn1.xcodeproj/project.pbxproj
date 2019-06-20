@@ -149,7 +149,7 @@
 		A68E8DA619652E0E0090FC94 /* UMASN1OctetString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UMASN1OctetString.m; sourceTree = "<group>"; };
 		A68E8DA919652E0E0090FC94 /* UMASN1Tag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMASN1Tag.h; sourceTree = "<group>"; };
 		A68E8DAA19652E0E0090FC94 /* UMASN1Tag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UMASN1Tag.m; sourceTree = "<group>"; };
-		A68E8DC319652E330090FC94 /* ulib.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ulib.framework; path = /Library/Frameworks/ulib.framework; sourceTree = "<absolute>"; };
+		A68E8DC319652E330090FC94 /* ulib.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ulib.framework; path = "/Library/Application Support/FinkTelecomServices/frameworks/ulib.framework"; sourceTree = "<absolute>"; };
 		A6C6E8961CC7DDDE00ADA9E0 /* UMASN1ObjectIdentifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMASN1ObjectIdentifier.h; sourceTree = "<group>"; };
 		A6C6E8971CC7DDDE00ADA9E0 /* UMASN1ObjectIdentifier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UMASN1ObjectIdentifier.m; sourceTree = "<group>"; };
 		A6C6E89A1CC7DE1400ADA9E0 /* UMASN1ObjectDescriptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMASN1ObjectDescriptor.h; sourceTree = "<group>"; };
@@ -631,7 +631,7 @@
 				DSTROOT = /;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				FRAMEWORK_SEARCH_PATHS = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				FRAMEWORK_SEARCH_PATHS = "\"/Library/Application Support/FinkTelecomServices/frameworks\"";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
@@ -648,7 +648,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				INSTALL_PATH = "/Library/Application Support/FinkTelecomServices/frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = "-DCONFIG=Debug";
@@ -692,7 +692,7 @@
 				DSTROOT = /;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				FRAMEWORK_SEARCH_PATHS = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				FRAMEWORK_SEARCH_PATHS = "\"/Library/Application Support/FinkTelecomServices/frameworks\"";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -702,7 +702,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				INSTALL_PATH = "/Library/Application Support/FinkTelecomServices/frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				OTHER_CFLAGS = "-DCONFIG=Release";
 				SDKROOT = macosx;
@@ -796,12 +796,12 @@
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEPLOYMENT_LOCATION = NO;
+				DEPLOYMENT_LOCATION = YES;
 				DEVELOPMENT_TEAM = 2GSNWPNR77;
-				DSTROOT = "";
+				DSTROOT = /;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
-				INSTALL_PATH = "";
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				INSTALL_PATH = "/Library/Application Support/FinkTelecomServices/bin";
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -818,12 +818,12 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEPLOYMENT_LOCATION = NO;
+				DEPLOYMENT_LOCATION = YES;
 				DEVELOPMENT_TEAM = 2GSNWPNR77;
-				DSTROOT = "";
+				DSTROOT = /;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
-				INSTALL_PATH = "";
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				INSTALL_PATH = "/Library/Application Support/FinkTelecomServices/bin";
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
