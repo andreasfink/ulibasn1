@@ -10,6 +10,11 @@
 
 @implementation UMASN1Enumerated
 
+- (UMASN1Enumerated *)init
+{
+    return [self initWithValue:0];
+}
+
 - (UMASN1Enumerated *)initWithValue:(int64_t)i
 {
     self = [super init];
