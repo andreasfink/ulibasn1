@@ -9,5 +9,13 @@
 #import "UMASN1Integer.h"
 
 @interface UMASN1Enumerated : UMASN1Integer
+{
+    NSDictionary *_enumDefinition;
+}
 
+- (void)setEnumDefinition;
+
+- (UMASN1Enumerated *)initWithString:(NSString *)s;
+- (void)setString:(NSString *)s;
+- (NSString *)stringValue;
 @end
