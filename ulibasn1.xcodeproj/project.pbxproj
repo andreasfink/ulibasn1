@@ -454,6 +454,8 @@
 						ProvisioningStyle = Automatic;
 					};
 					A672C7BE19652D1B0090FC94 = {
+						DevelopmentTeam = 2GSNWPNR77;
+						ProvisioningStyle = Automatic;
 						TestTargetID = A672C7A719652D1B0090FC94;
 					};
 					A687A1FF2055D01D00981654 = {
@@ -713,7 +715,7 @@
 		A672C7D119652D1B0090FC94 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				DEVELOPMENT_TEAM = 2GSNWPNR77;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -731,7 +733,7 @@
 		A672C7D219652D1B0090FC94 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				DEVELOPMENT_TEAM = 2GSNWPNR77;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -749,7 +751,10 @@
 		A672C7D419652D1B0090FC94 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 2GSNWPNR77;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 					"$(inherited)",
@@ -763,6 +768,7 @@
 				INFOPLIST_FILE = "ulibasn1Tests/ulibasn1Tests-Info.plist";
 				PRODUCT_BUNDLE_IDENTIFIER = "me.fink.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				WRAPPER_EXTENSION = xctest;
 			};
 			name = Debug;
@@ -770,7 +776,10 @@
 		A672C7D519652D1B0090FC94 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 2GSNWPNR77;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 					"$(inherited)",
@@ -780,6 +789,7 @@
 				INFOPLIST_FILE = "ulibasn1Tests/ulibasn1Tests-Info.plist";
 				PRODUCT_BUNDLE_IDENTIFIER = "me.fink.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				WRAPPER_EXTENSION = xctest;
 			};
 			name = Release;
