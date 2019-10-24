@@ -76,5 +76,8 @@ NSString *BinaryToNSString(const unsigned char *str, int size);
 + (BOOL)tagMatches:(uint64_t)tag;
 + (BOOL)tagMatch:(UMASN1Tag *)t;
 - (id)proxyForJson;
+- (NSString *)jsonString;
+- (NSString *)jsonCompactString;
+
 
 @end

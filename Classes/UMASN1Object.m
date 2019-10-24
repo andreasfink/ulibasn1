@@ -743,4 +743,29 @@ NSString *BinaryToNSString(const unsigned char *str, int size )
     return NO;
 }
 
+- (NSString *)jsonString
+{
+    UMJsonWriter *writer = [[UMJsonWriter alloc] init];
+    writer.humanReadable = YES;
+    NSString *json=NULL;
+    json = [writer stringWithObject:self];
+    if (!json)
+    {
+        NSLog(@"jsonString encoding failed. Error is: %@", writer.error);
+    }
+    return json;
+}
+
+- (NSString *)jsonCompactString
+{
+    UMJsonWriter *writer = [[UMJsonWriter alloc] init];
+    writer.humanReadable = NO;
+    NSString *json=NULL;
+    json = [writer stringWithObject:self];
+    if (!json)
+    {
+        NSLog(@"jsonString encoding failed. Error is: %@", writer.error);
+    }
+    return json;
+}
 @end
