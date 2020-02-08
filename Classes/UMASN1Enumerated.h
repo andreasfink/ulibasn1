@@ -15,6 +15,16 @@
 
 - (void)setEnumDefinition;
 
+/*
+this is overridden normally with a method doing something like this:
+
+    _enumDefinition  = @ {
+        @"stringValue1" : @(1),
+        @"stringValue2" : @(2),
+}
+
+*/
+
 - (UMASN1Enumerated *)initWithString:(NSString *)s;
 - (void)setString:(NSString *)s;
 - (NSString *)stringValue;

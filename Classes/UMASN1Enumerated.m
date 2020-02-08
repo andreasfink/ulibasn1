@@ -18,6 +18,7 @@
 - (void)setEnumDefinition
 {
     /* this is overridden normally */
+    /* this metod should _enumDefinition to a dictionary stringValue -> @(number) */
 }
 
 - (UMASN1Enumerated *)initWithValue:(int64_t)i
