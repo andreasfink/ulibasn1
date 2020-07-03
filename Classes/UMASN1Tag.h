@@ -38,7 +38,7 @@ typedef enum UMASN1PrimitiveType
     UMASN1Primitive_t61_string          = 0x14,
     UMASN1Primitive_ia5_string          = 0x16,
     UMASN1Primitive_utc_time            = 0x17,
-//    UMASN1Primitive_real                = 0xFF, /*TO BE VERIFIED */
+//  UMASN1Primitive_real                = 0xFF, /*TO BE VERIFIED */
     
     UMASN1Primitive_UniversalString     = 0x1B, /* In the string type each character is encoded by 4 octets */
     UMASN1Primitive_BMPString           = 0x1D, /* Subset of Unicode character set, each symbol is encoded by 2 octets. */
