@@ -21,29 +21,43 @@ typedef enum UMASN1ClassType
 
 typedef enum UMASN1PrimitiveType
 {
-    UMASN1Primitive_choice              = 0x00, /* dummy, you would never see this in the wild */
-    UMASN1Primitive_boolean             = 0x01,
-    UMASN1Primitive_integer             = 0x02,
-    UMASN1Primitive_bitstring           = 0x03,
-    UMASN1Primitive_octetstring         = 0x04,
-    UMASN1Primitive_null                = 0x05,
-    UMASN1Primitive_object_identifier   = 0x06,
-    UMASN1Primitive_object_descriptor   = 0x07,
-    UMASN1Primitive_external            = 0x08,
-    UMASN1Primitive_real                = 0x09,
-    UMASN1Primitive_enumerated          = 0x0A,/* found here http://www.obj-sys.com/asn1tutorial/node10.html */
-    UMASN1Primitive_sequence            = 0x10,
-    UMASN1Primitive_set_of              = 0x11,
-    UMASN1Primitive_printable_string    = 0x13,
-    UMASN1Primitive_t61_string          = 0x14,
-    UMASN1Primitive_ia5_string          = 0x16,
-    UMASN1Primitive_utc_time            = 0x17,
-//  UMASN1Primitive_real                = 0xFF, /*TO BE VERIFIED */
-    
-    UMASN1Primitive_UniversalString     = 0x1B, /* In the string type each character is encoded by 4 octets */
-    UMASN1Primitive_BMPString           = 0x1D, /* Subset of Unicode character set, each symbol is encoded by 2 octets. */
-    UMASN1Primitive_UTF8String          = 0x0B, /* Native Unicode, but with additional post-processing, allowing to encode each symbol in varieties number of characters. */
-
+    UMASN1Primitive_choice                          = 0, /* dummy, you would never see this in the wild */
+    UMASN1Primitive_boolean                         = 1,
+    UMASN1Primitive_integer                         = 2,
+    UMASN1Primitive_bitstring                       = 3,
+    UMASN1Primitive_octetstring                     = 4,
+    UMASN1Primitive_null                            = 5,
+    UMASN1Primitive_object_identifier               = 6,
+    UMASN1Primitive_object_descriptor               = 7,
+    UMASN1Primitive_external                        = 8,
+    UMASN1Primitive_real                            = 9,
+    UMASN1Primitive_enumerated                      = 10,
+    UMASN1Primitive_embedded_pdv                    = 11,
+    UMASN1Primitive_UTF8String                      = 12,
+    UMASN1Primitive_relative_object_identifier      = 13,
+    UMASN1Primitive_time                            = 14,
+    UMASN1Primitive_reserved15                      = 15,
+    UMASN1Primitive_sequence                        = 16, /* sequence and sequency of */
+    UMASN1Primitive_set_of                          = 17, /* set and set of */
+    UMASN1Primitive_numeric_string                  = 18,
+    UMASN1Primitive_printable_string                = 19,
+    UMASN1Primitive_t61_string                      = 20,
+    UMASN1Primitive_videotex_string                 = 21,
+    UMASN1Primitive_ia5_string                      = 22,
+    UMASN1Primitive_utc_time                        = 23,
+    UMASN1Primitive_generalized_time                = 24,
+    UMASN1Primitive_graphic_string                  = 25,
+    UMASN1Primitive_visible_string                  = 26,
+    UMASN1Primitive_general_string                  = 27,
+    UMASN1Primitive_universal_string                = 28,
+    UMASN1Primitive_unrestricted_character_string   = 29,
+    UMASN1Primitive_bmp_string                      = 30,
+    UMASN1Primitive_date                            = 31,
+    UMASN1Primitive_time_of_day                     = 32,
+    UMASN1Primitive_date_time                       = 33,
+    UMASN1Primitive_duration                        = 34,
+    UMASN1Primitive_oid_internationalized           = 35,
+    UMASN1Primitive_relative_oid_internationalized  = 36,
 } UMASN1PrimitiveType;
 
 
