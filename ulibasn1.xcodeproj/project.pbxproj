@@ -656,7 +656,7 @@
 				OTHER_CFLAGS = "-DCONFIG=Debug";
 				SDKROOT = macosx;
 				STRIP_INSTALLED_PRODUCT = NO;
-				WARNING_CFLAGS = "-Wimplicit-fallthrough=3";
+				WARNING_CFLAGS = "-Wimplicit-fallthrough";
 			};
 			name = Debug;
 		};
@@ -710,7 +710,7 @@
 				OTHER_CFLAGS = "-DCONFIG=Release";
 				SDKROOT = macosx;
 				STRIP_INSTALLED_PRODUCT = NO;
-				WARNING_CFLAGS = "-Wimplicit-fallthrough=3";
+				WARNING_CFLAGS = "-Wimplicit-fallthrough";
 			};
 			name = Release;
 		};
