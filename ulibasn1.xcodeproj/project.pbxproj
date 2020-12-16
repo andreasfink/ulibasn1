@@ -652,7 +652,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INSTALL_PATH = "/Library/Application Support/FinkTelecomServices/frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
-				ONLY_ACTIVE_ARCH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				OTHER_CFLAGS = "-DCONFIG=Debug";
 				SDKROOT = macosx;
 				STRIP_INSTALLED_PRODUCT = NO;
@@ -707,6 +707,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INSTALL_PATH = "/Library/Application Support/FinkTelecomServices/frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				ONLY_ACTIVE_ARCH = NO;
 				OTHER_CFLAGS = "-DCONFIG=Release";
 				SDKROOT = macosx;
 				STRIP_INSTALLED_PRODUCT = NO;
@@ -717,6 +718,11 @@
 		A672C7D119652D1B0090FC94 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = (
+					"$(ARCHS_STANDARD)",
+					x86_64,
+					arm64,
+				);
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 2GSNWPNR77;
@@ -737,6 +743,11 @@
 		A672C7D219652D1B0090FC94 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = (
+					"$(ARCHS_STANDARD)",
+					x86_64,
+					arm64,
+				);
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 2GSNWPNR77;
