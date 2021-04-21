@@ -13,6 +13,8 @@
     NSDictionary *_enumDefinition;
 }
 
+@property(readwrite,strong)     NSDictionary *enumDefinition;
+
 - (void)setEnumDefinition;
 
 /*
