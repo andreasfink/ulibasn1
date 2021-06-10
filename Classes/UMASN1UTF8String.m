@@ -7,7 +7,6 @@
 //
 
 #import "UMASN1UTF8String.h"
-#import "UMASN1Length.h"
 #import "UMASN1Tag.h"
 
 @implementation UMASN1UTF8String

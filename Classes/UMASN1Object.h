@@ -11,8 +11,9 @@
 
 #import <ulib/ulib.h>
 
-#import "UMASN1Length.h"
 #import "UMASN1Tag.h"
+
+@class UMASN1Length;
 
 typedef enum    UMASN1EncodingType
 {

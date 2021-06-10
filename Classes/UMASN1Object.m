@@ -11,8 +11,6 @@
 
 #import "UMASN1Object.h"
 #import "UMASN1Tag.h"
-#import "UMASN1Length.h"
-#import "UMASN1EndOfContents.h"
 
 #define NIBBLE_TO_HEX(b)    (((b)<0x0A) ? ('0'+(b)) : ('A'+(b)-0x0A))
 
