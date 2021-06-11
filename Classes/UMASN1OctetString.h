@@ -9,9 +9,8 @@
 // the author.
 
 
-#import <ulib/ulib.h>
 
-@class UMASN1Object;
+#import "UMASN1Object.h"
 
 @interface UMASN1OctetString : UMASN1Object
 

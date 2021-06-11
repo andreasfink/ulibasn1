@@ -1,6 +1,3 @@
-
-@class UMASN1Object;
-
 //
 //  UMASN1Real.h
 //  ulibasn1
@@ -9,6 +6,7 @@
 //  Copyright © 2017 Andreas Fink (andreas@fink.org). All rights reserved.
 //
 
+#import "UMASN1Object.h"
 
 @interface UMASN1Real : UMASN1Object
 
