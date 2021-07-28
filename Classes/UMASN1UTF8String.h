@@ -10,8 +10,10 @@
 
 @interface UMASN1UTF8String : UMASN1Object
 
+- (UMASN1UTF8String *)initWithString:(NSString *)s;
 - (UMASN1UTF8String *)initWithValue:(NSString *)s;
 - (NSString *) value;
+- (NSString *)stringValue;
 - (void) setValue:(NSString *)v;
 
 @end
