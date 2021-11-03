@@ -25,6 +25,6 @@
 - (NSData *)berEncodedEndOfData;
 
 
-- (void)appendToMutableData:(NSMutableData *)d;
+//- (void)appendToMutableData:(NSMutableData *)d;
 - (UMASN1Length *)initWithBerData:(NSData *)data atPosition:(NSUInteger *)pos context:(id)context;
 @end

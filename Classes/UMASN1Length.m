@@ -66,6 +66,7 @@ static inline uint8_t grab_byte(NSData *data,NSUInteger *pos, id obj)
     }
 }
 
+#if 0
 - (void)appendToMutableData:(NSMutableData *)d
 {
     uint8_t byte;
@@ -98,10 +99,12 @@ static inline uint8_t grab_byte(NSData *data,NSUInteger *pos, id obj)
                 byte = ((len >> (numberOfBytesNeeded * 8)) & 0xFF );
             }
             [d appendBytes:&byte length:1];
+            numberOfBytesNeeded--;
         }
     }
-    
 }
+#endif
+
 - (UMASN1Length *)initWithBerData:(NSData *)data atPosition:(NSUInteger *)pos context:(id)context
 {
     self = [super init];
