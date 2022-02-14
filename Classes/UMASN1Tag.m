@@ -46,6 +46,7 @@ static inline uint8_t grab_byte(NSData *data,NSUInteger *pos)
 {
     _isConstructed = YES;
 }
+
 -(void)setTagIsPrimitive
 {
     _isConstructed = NO;
