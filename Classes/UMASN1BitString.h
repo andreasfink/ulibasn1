@@ -12,13 +12,15 @@
 
 @interface UMASN1BitString : UMASN1Object
 {
-    
+    NSDictionary *_bitStringDefintionBitToName; /* dictionary @(number)->stringValue  */
+    NSDictionary *_bitStringDefintionNameToBit; /* dictionary stringValue -> @(number) */
 }
 
 
 - (UMASN1BitString *)initWithValue:(NSData *)d bitcount:(NSInteger)bc;
-- (NSString *)objectValue;
+- (void)setBitStringDefinition;     /* this is overridden normally */
 
+- (id)objectValue;
 
 - (void)setBit:(NSInteger)bit value:(BOOL)bitValue;
 - (void)setBit:(NSInteger)bit;

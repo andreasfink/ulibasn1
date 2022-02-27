@@ -15,8 +15,18 @@
 
 - (UMASN1BitString *)init
 {
-    return [self initWithValue:[NSData data] bitcount:0];
+    self = [self initWithValue:[NSData data] bitcount:0];
+    [self setBitStringDefinition];
+    return self;
 }
+
+- (void)setBitStringDefinition
+{
+    /* this is overridden normally */
+    /* this metod should _bitStringDefintionBitToName to a dictionary stringValue -> @(number) */
+    /* this metod should _bitStringDefintionNameToBt to a dictionary @(number)->stringValue  */
+}
+
 
 - (UMASN1BitString *)initWithValue:(NSData *)d bitcount:(NSInteger)bc
 {
@@ -27,6 +37,7 @@
         [self.asn1_tag setTagIsPrimitive];
         self.asn1_tag.tagNumber = UMASN1Primitive_bitstring;
         [self setValue:d bitcount:bc];
+        [self setBitStringDefinition];
     }
     return self;
 }
@@ -99,9 +110,31 @@
     return @"BitString";
 }
 
-- (NSString *)objectValue
+- (id)objectValue
 {
-    return [self.asn1_data hexString];
+    if(_bitStringDefintionBitToName == NULL)
+    {
+        [self setBitStringDefinition];
+    }
+    UMSynchronizedSortedDictionary *dict = [[UMSynchronizedSortedDictionary alloc]init];
+    dict[@"raw"] =  [self.asn1_data hexString];
+    NSInteger totalBits = [self bitcount];
+    for(int bit=0; bit<totalBits;bit++)
+    {
+        NSString *name = @"unknown";
+        if(_bitStringDefintionBitToName)
+        {
+            NSString *n = _bitStringDefintionBitToName[@(bit)];;
+            if(n.length > 0)
+            {
+                name = n;
+            }
+        }
+        NSString *desc = [NSString stringWithFormat:@"%@(%d)",name,bit];
+        BOOL value = [self bit:bit];
+        dict[desc] =@(value);
+    }
+    return dict;
 }
 
 
