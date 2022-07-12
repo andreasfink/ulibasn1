@@ -79,5 +79,4 @@ NSString *BinaryToNSString(const unsigned char *str, int size);
 - (NSString *)jsonString;
 - (NSString *)jsonCompactString;
 
-
 @end
