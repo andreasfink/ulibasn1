@@ -16,6 +16,8 @@
 @interface UMASN1Integer : UMASN1ObjectPrimitive
 
 - (UMASN1Integer *)initWithValue:(int64_t)i;
+- (UMASN1Integer *)initWithNumber:(NSNumber *)num;
+
 - (int64_t) value;
 - (void) setValue:(int64_t)v;
 - (UMASN1Integer *)initWithString:(NSString *)s;

@@ -42,6 +42,16 @@
     return self;
 }
 
+- (UMASN1Integer *)initWithNumber:(NSNumber *)num
+{
+    if(num == NULL)
+    {
+        return NULL;
+    }
+    long long ull = [num longLongValue];
+    return [self initWithValue:ull];
+}
+
 - (UMASN1Integer *)initWithString:(NSString *)s
 {
     return [self initWithValue:(int64_t)[s integerValue]];
