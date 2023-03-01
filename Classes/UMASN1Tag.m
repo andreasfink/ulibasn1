@@ -130,7 +130,7 @@ static inline uint8_t grab_byte(NSData *data,NSUInteger *pos)
                 byte = grab_byte(data,pos);
                 bit7 = byte & 0x80;
                 _tagNumber = _tagNumber << 7;
-                _tagNumber = _tagNumber | (byte & 0x1F);
+                _tagNumber = _tagNumber | (byte & 0x7F);
             } while (bit7!=0);
         }
     }
@@ -255,7 +255,7 @@ static inline uint8_t grab_byte(NSData *data,NSUInteger *pos)
 - (NSData *)berEncoded
 {
     NSMutableData *data = [[NSMutableData alloc]init];
-    unsigned char byte = (_tagClass & 0x3) << 6;
+    uint8_t byte = (_tagClass & 0x3) << 6;
     if(self.tagIsConstructed)
     {
         byte = byte | 0x20;
@@ -272,7 +272,7 @@ static inline uint8_t grab_byte(NSData *data,NSUInteger *pos)
     
     uint64_t i = _tagNumber;
     
-    unsigned char bytes[16];
+    uint8_t bytes[16];
     if(i < (1LL << 7)) /* 7 bits */
     {
         bytes[0] = i;
