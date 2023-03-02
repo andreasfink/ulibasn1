@@ -293,7 +293,7 @@ NSString *BinaryToNSString(const unsigned char *str, int size )
         }
         else
         {
-            self.asn1_list   = [obj.asn1_list mutableCopy];
+            _asn1_list = [obj.asn1_list copy];
         }
         self = [self processAfterDecodeWithContext:context];
     }
