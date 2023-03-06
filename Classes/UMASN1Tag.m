@@ -265,108 +265,109 @@ static inline uint8_t grab_byte(NSData *data,NSUInteger *pos)
         /* simple case: 1 byte identifier */
         byte = byte | (_tagNumber & 0x1F);
         [data appendBytes:&byte length:1];
-        return data;
-    }
-    byte = byte | 0x1F;
-    [data appendBytes:&byte length:1];
-    
-    uint64_t i = _tagNumber;
-    
-    uint8_t bytes[16];
-    if(i < (1LL << 7)) /* 7 bits */
-    {
-        bytes[0] = i;
-        [data appendBytes:&bytes length:1];
-    }
-    else if(i < (1LL << 14)) /* 2x 7 bits */
-    {
-        bytes[0] = ((i >> 7) & 0x7F) | 0x80;
-        bytes[1] = ((i >> 0) & 0x7F) | 0x00;
-        [data appendBytes:&bytes length:2];
-    }
-    else if(i < (1LL << 21)) /* 3 x 7 bits */
-    {
-        bytes[0] = ((i >> 14) & 0x7F) | 0x80;
-        bytes[1] = ((i >> 7) & 0x7F)  | 0x80;
-        bytes[2] =  (i >> 0) & 0x7F;
-        [data appendBytes:&bytes length:3];
-    }
-    else if(i < (1LL << 28)) /* 4 x 7 bits */
-    {
-        bytes[0] = ((i >> 21) & 0x7F) | 0x80;
-        bytes[1] = ((i >> 14) & 0x7F) | 0x80;
-        bytes[2] = ((i >> 7) & 0x7F)  | 0x80;
-        bytes[3] =  (i >> 0) & 0x7F;
-        [data appendBytes:&bytes length:4];
-    }
-    else if(i < (1LL << 35)) /* 5 x 7 bits */
-    {
-        bytes[0] = ((i >> 28) & 0x7F) | 0x80;
-        bytes[1] = ((i >> 21) & 0x7F) | 0x80;
-        bytes[2] = ((i >> 14) & 0x7F) | 0x80;
-        bytes[3] = ((i >> 7) & 0x7F)  | 0x80;
-        bytes[4] =  (i >> 0) & 0x7F;
-        [data appendBytes:&bytes length:5];
-    }
-    else if(i < (1LL << 42)) /* 6 x 7 bits */
-    {
-        bytes[0] = ((i >> 35) & 0x7F) | 0x80;
-        bytes[1] = ((i >> 28) & 0x7F) | 0x80;
-        bytes[2] = ((i >> 21) & 0x7F) | 0x80;
-        bytes[3] = ((i >> 14) & 0x7F) | 0x80;
-        bytes[4] = ((i >> 7) & 0x7F)  | 0x80;
-        bytes[5] =  (i >> 0) & 0x7F;
-        [data appendBytes:&bytes length:6];
-    }
-    else if(i < (1LL << 49)) /* 7 x 7 bits */
-    {
-        bytes[0] = ((i >> 42) & 0x7F) | 0x80;
-        bytes[1] = ((i >> 35) & 0x7F) | 0x80;
-        bytes[2] = ((i >> 28) & 0x7F) | 0x80;
-        bytes[3] = ((i >> 21) & 0x7F) | 0x80;
-        bytes[4] = ((i >> 14) & 0x7F) | 0x80;
-        bytes[5] = ((i >> 7) & 0x7F)  | 0x80;
-        bytes[6] =  (i >> 0) & 0x7F;
-        [data appendBytes:&bytes length:7];
-    }
-    else if(i < (1LL << 56)) /* 8 x 7 bits */
-    {
-        bytes[0] = ((i >> 49) & 0x7F) | 0x80;
-        bytes[1] = ((i >> 42) & 0x7F) | 0x80;
-        bytes[2] = ((i >> 35) & 0x7F) | 0x80;
-        bytes[3] = ((i >> 28) & 0x7F) | 0x80;
-        bytes[4] = ((i >> 21) & 0x7F) | 0x80;
-        bytes[5] = ((i >> 14) & 0x7F) | 0x80;
-        bytes[6] = ((i >> 7) & 0x7F)  | 0x80;
-        bytes[7] =  (i >> 0) & 0x7F;
-        [data appendBytes:&bytes length:8];
-    }
-    else if(i < (1LL << 63)) /* 9 x 7 bits */
-    {
-        bytes[0] = ((i >> 56) & 0x7F) | 0x80;
-        bytes[1] = ((i >> 49) & 0x7F) | 0x80;
-        bytes[2] = ((i >> 42) & 0x7F) | 0x80;
-        bytes[3] = ((i >> 35) & 0x7F) | 0x80;
-        bytes[4] = ((i >> 28) & 0x7F) | 0x80;
-        bytes[5] = ((i >> 21) & 0x7F) | 0x80;
-        bytes[6] = ((i >> 14) & 0x7F) | 0x80;
-        bytes[7] = ((i >> 7) & 0x7F)  | 0x80;
-        bytes[8] =  (i >> 0) & 0x7F;
-        [data appendBytes:&bytes length:9];
     }
     else
     {
-        bytes[0] = ((i >> 63) & 0x7F) | 0x80;
-        bytes[1] = ((i >> 56) & 0x7F) | 0x80;
-        bytes[2] = ((i >> 49) & 0x7F) | 0x80;
-        bytes[3] = ((i >> 42) & 0x7F) | 0x80;
-        bytes[4] = ((i >> 35) & 0x7F) | 0x80;
-        bytes[5] = ((i >> 28) & 0x7F) | 0x80;
-        bytes[6] = ((i >> 21) & 0x7F) | 0x80;
-        bytes[7] = ((i >> 14) & 0x7F) | 0x80;
-        bytes[8] = ((i >> 7) & 0x7F)  | 0x80;
-        bytes[9] =  (i >> 0) & 0x7F;
-        [data appendBytes:&bytes length:10];
+        byte = byte | 0x1F;
+        [data appendBytes:&byte length:1];
+        uint64_t i = _tagNumber;
+
+        uint8_t bytes[16];
+        if(i < (1LL << 7)) /* 7 bits */
+        {
+            bytes[0] = i & 0x7F;
+            [data appendBytes:&bytes length:1];
+        }
+        else if(i < (1LL << 14)) /* 2x 7 bits */
+        {
+            bytes[0] = ((i >> 7) & 0x7F) | 0x80;
+            bytes[1] = ((i >> 0) & 0x7F) | 0x00;
+            [data appendBytes:&bytes length:2];
+        }
+        else if(i < (1LL << 21)) /* 3 x 7 bits */
+        {
+            bytes[0] = ((i >> 14) & 0x7F) | 0x80;
+            bytes[1] = ((i >> 7) & 0x7F)  | 0x80;
+            bytes[2] =  (i >> 0) & 0x7F;
+            [data appendBytes:&bytes length:3];
+        }
+        else if(i < (1LL << 28)) /* 4 x 7 bits */
+        {
+            bytes[0] = ((i >> 21) & 0x7F) | 0x80;
+            bytes[1] = ((i >> 14) & 0x7F) | 0x80;
+            bytes[2] = ((i >> 7) & 0x7F)  | 0x80;
+            bytes[3] =  (i >> 0) & 0x7F;
+            [data appendBytes:&bytes length:4];
+        }
+        else if(i < (1LL << 35)) /* 5 x 7 bits */
+        {
+            bytes[0] = ((i >> 28) & 0x7F) | 0x80;
+            bytes[1] = ((i >> 21) & 0x7F) | 0x80;
+            bytes[2] = ((i >> 14) & 0x7F) | 0x80;
+            bytes[3] = ((i >> 7) & 0x7F)  | 0x80;
+            bytes[4] =  (i >> 0) & 0x7F;
+            [data appendBytes:&bytes length:5];
+        }
+        else if(i < (1LL << 42)) /* 6 x 7 bits */
+        {
+            bytes[0] = ((i >> 35) & 0x7F) | 0x80;
+            bytes[1] = ((i >> 28) & 0x7F) | 0x80;
+            bytes[2] = ((i >> 21) & 0x7F) | 0x80;
+            bytes[3] = ((i >> 14) & 0x7F) | 0x80;
+            bytes[4] = ((i >> 7) & 0x7F)  | 0x80;
+            bytes[5] =  (i >> 0) & 0x7F;
+            [data appendBytes:&bytes length:6];
+        }
+        else if(i < (1LL << 49)) /* 7 x 7 bits */
+        {
+            bytes[0] = ((i >> 42) & 0x7F) | 0x80;
+            bytes[1] = ((i >> 35) & 0x7F) | 0x80;
+            bytes[2] = ((i >> 28) & 0x7F) | 0x80;
+            bytes[3] = ((i >> 21) & 0x7F) | 0x80;
+            bytes[4] = ((i >> 14) & 0x7F) | 0x80;
+            bytes[5] = ((i >> 7) & 0x7F)  | 0x80;
+            bytes[6] =  (i >> 0) & 0x7F;
+            [data appendBytes:&bytes length:7];
+        }
+        else if(i < (1LL << 56)) /* 8 x 7 bits */
+        {
+            bytes[0] = ((i >> 49) & 0x7F) | 0x80;
+            bytes[1] = ((i >> 42) & 0x7F) | 0x80;
+            bytes[2] = ((i >> 35) & 0x7F) | 0x80;
+            bytes[3] = ((i >> 28) & 0x7F) | 0x80;
+            bytes[4] = ((i >> 21) & 0x7F) | 0x80;
+            bytes[5] = ((i >> 14) & 0x7F) | 0x80;
+            bytes[6] = ((i >> 7) & 0x7F)  | 0x80;
+            bytes[7] =  (i >> 0) & 0x7F;
+            [data appendBytes:&bytes length:8];
+        }
+        else if(i < (1LL << 63)) /* 9 x 7 bits */
+        {
+            bytes[0] = ((i >> 56) & 0x7F) | 0x80;
+            bytes[1] = ((i >> 49) & 0x7F) | 0x80;
+            bytes[2] = ((i >> 42) & 0x7F) | 0x80;
+            bytes[3] = ((i >> 35) & 0x7F) | 0x80;
+            bytes[4] = ((i >> 28) & 0x7F) | 0x80;
+            bytes[5] = ((i >> 21) & 0x7F) | 0x80;
+            bytes[6] = ((i >> 14) & 0x7F) | 0x80;
+            bytes[7] = ((i >> 7) & 0x7F)  | 0x80;
+            bytes[8] =  (i >> 0) & 0x7F;
+            [data appendBytes:&bytes length:9];
+        }
+        else
+        {
+            bytes[0] = ((i >> 63) & 0x7F) | 0x80;
+            bytes[1] = ((i >> 56) & 0x7F) | 0x80;
+            bytes[2] = ((i >> 49) & 0x7F) | 0x80;
+            bytes[3] = ((i >> 42) & 0x7F) | 0x80;
+            bytes[4] = ((i >> 35) & 0x7F) | 0x80;
+            bytes[5] = ((i >> 28) & 0x7F) | 0x80;
+            bytes[6] = ((i >> 21) & 0x7F) | 0x80;
+            bytes[7] = ((i >> 14) & 0x7F) | 0x80;
+            bytes[8] = ((i >> 7) & 0x7F)  | 0x80;
+            bytes[9] =  (i >> 0) & 0x7F;
+            [data appendBytes:&bytes length:10];
+        }
     }
     return data;
 }
