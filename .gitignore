@@ -15,6 +15,9 @@ autom4te.cache
 Classes/ulib_config.h
 BUILDNR
 make_buildnr.sh
+buildnumber.c
+buildnumber.h
+
 
 
 #########################
