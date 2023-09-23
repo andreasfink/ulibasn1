@@ -49,8 +49,6 @@
 		A68E8DC219652E0E0090FC94 /* UMASN1Tag.m in Sources */ = {isa = PBXBuildFile; fileRef = A68E8DAA19652E0E0090FC94 /* UMASN1Tag.m */; };
 		A68E8DFB196548520090FC94 /* ulibasn1.h in Headers */ = {isa = PBXBuildFile; fileRef = A672C7B819652D1B0090FC94 /* ulibasn1.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A6BA01A92ABEDF26005860B5 /* ulib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6BA01A82ABEDF26005860B5 /* ulib.framework */; };
-		A6BA01AA2ABEDF26005860B5 /* ulib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6BA01A82ABEDF26005860B5 /* ulib.framework */; };
-		A6BA01AB2ABEDF34005860B5 /* ulib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6BA01A82ABEDF26005860B5 /* ulib.framework */; };
 		A6C6E8981CC7DDDE00ADA9E0 /* UMASN1ObjectIdentifier.h in Headers */ = {isa = PBXBuildFile; fileRef = A6C6E8961CC7DDDE00ADA9E0 /* UMASN1ObjectIdentifier.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A6C6E8991CC7DDDE00ADA9E0 /* UMASN1ObjectIdentifier.m in Sources */ = {isa = PBXBuildFile; fileRef = A6C6E8971CC7DDDE00ADA9E0 /* UMASN1ObjectIdentifier.m */; };
 		A6C6E89C1CC7DE1400ADA9E0 /* UMASN1ObjectDescriptor.h in Headers */ = {isa = PBXBuildFile; fileRef = A6C6E89A1CC7DE1400ADA9E0 /* UMASN1ObjectDescriptor.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -181,7 +179,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				A672C7C119652D1B0090FC94 /* XCTest.framework in Frameworks */,
-				A6BA01AA2ABEDF26005860B5 /* ulib.framework in Frameworks */,
 				A672C7C519652D1B0090FC94 /* ulibasn1.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -190,7 +187,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A6BA01AB2ABEDF34005860B5 /* ulib.framework in Frameworks */,
 				A687A2082055D03000981654 /* ulibasn1.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -391,9 +387,9 @@
 			buildConfigurationList = A672C7D019652D1B0090FC94 /* Build configuration list for PBXNativeTarget "ulibasn1" */;
 			buildPhases = (
 				A675980B1B1C643E0090FC94 /* ShellScript */,
-				A672C7A519652D1B0090FC94 /* Headers */,
 				A672C7A319652D1B0090FC94 /* Sources */,
 				A672C7A419652D1B0090FC94 /* Frameworks */,
+				A672C7A519652D1B0090FC94 /* Headers */,
 				A672C7A619652D1B0090FC94 /* Resources */,
 			);
 			buildRules = (
