@@ -450,7 +450,6 @@
 				ORGANIZATIONNAME = "Andreas Fink (andreas@fink.org)";
 				TargetAttributes = {
 					A672C7A719652D1B0090FC94 = {
-						DevelopmentTeam = 38L827M334;
 						ProvisioningStyle = Automatic;
 					};
 					A672C7BE19652D1B0090FC94 = {
@@ -725,7 +724,6 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				CURRENT_PROJECT_VERSION = 1;
-				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 38L827M334;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
