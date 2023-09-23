@@ -9,12 +9,11 @@
 // the author.
 
 
-#import "UMASN1Integer.h"
-#import "UMASN1Tag.h"
-#import "UMASN1Length.h"
+#import <ulibasn1/UMASN1Integer.h>
+#import <ulibasn1/UMASN1Tag.h>
+#import <ulibasn1/UMASN1Length.h>
 
 @implementation UMASN1Integer
-#import "UMASN1Tag.h"
 
 - (UMASN1Integer *)init
 {
