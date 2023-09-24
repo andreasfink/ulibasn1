@@ -7,7 +7,7 @@
 //
 
 #import <XCTest/XCTest.h>
-#import "ulibasn1.h"
+#import<ulibasn1/ulibasn1.h>
 
 @interface ulibasn1Tests : XCTestCase
 

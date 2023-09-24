@@ -6,7 +6,7 @@
 //  Copyright © 2017 Andreas Fink (andreas@fink.org). All rights reserved.
 //
 
-#import "UMASN1Object.h"
+#import <ulibasn1/UMASN1Object.h>
 
 @interface UMASN1ObjectDescriptor : UMASN1Object
 

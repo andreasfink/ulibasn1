@@ -9,8 +9,8 @@
 // the author.
 
 
-#import "UMASN1Object.h"
-#import "UMASN1ObjectPrimitive.h"
+#import <ulibasn1/UMASN1Object.h>
+#import <ulibasn1/UMASN1ObjectPrimitive.h>
 
 
 @interface UMASN1Integer : UMASN1ObjectPrimitive

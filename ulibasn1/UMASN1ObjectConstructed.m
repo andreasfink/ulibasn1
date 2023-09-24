@@ -6,7 +6,7 @@
 //  Copyright © 2017 Andreas Fink (andreas@fink.org). All rights reserved.
 //
 
-#import "UMASN1ObjectConstructed.h"
+#import <ulibasn1/UMASN1ObjectConstructed.h>
 
 @implementation UMASN1ObjectConstructed
 
