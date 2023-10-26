@@ -7,6 +7,7 @@
 //
 
 #import <ulib/ulib.h>
+
 @class UMASN1Object;
 
 @interface UMZMQSocket (ASN1)

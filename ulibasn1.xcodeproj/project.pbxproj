@@ -13,6 +13,8 @@
 		A6091FBF1CB535F10076BD59 /* UMASN1ObjectConstructed.m in Sources */ = {isa = PBXBuildFile; fileRef = A6091FBD1CB535F10076BD59 /* UMASN1ObjectConstructed.m */; };
 		A6091FC21CB536060076BD59 /* UMASN1ObjectPrimitive.h in Headers */ = {isa = PBXBuildFile; fileRef = A6091FC01CB536060076BD59 /* UMASN1ObjectPrimitive.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A6091FC31CB536060076BD59 /* UMASN1ObjectPrimitive.m in Sources */ = {isa = PBXBuildFile; fileRef = A6091FC11CB536060076BD59 /* UMASN1ObjectPrimitive.m */; };
+		A623A9A32AE714EF00DA02B3 /* ulib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6BA01A82ABEDF26005860B5 /* ulib.framework */; };
+		A623A9A42AE714F000DA02B3 /* ulib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6BA01A82ABEDF26005860B5 /* ulib.framework */; };
 		A63DDF7E19BD3D0B003F83B5 /* UMASN1UTF8String.h in Headers */ = {isa = PBXBuildFile; fileRef = A63DDF7C19BD3D0B003F83B5 /* UMASN1UTF8String.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A63DDF7F19BD3D0B003F83B5 /* UMASN1UTF8String.m in Sources */ = {isa = PBXBuildFile; fileRef = A63DDF7D19BD3D0B003F83B5 /* UMASN1UTF8String.m */; };
 		A63DDF8319BD556E003F83B5 /* UMASN1Sequence.h in Headers */ = {isa = PBXBuildFile; fileRef = A63DDF8119BD556E003F83B5 /* UMASN1Sequence.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -179,6 +181,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A672C7C119652D1B0090FC94 /* XCTest.framework in Frameworks */,
+				A623A9A32AE714EF00DA02B3 /* ulib.framework in Frameworks */,
 				A672C7C519652D1B0090FC94 /* ulibasn1.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -187,6 +190,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A623A9A42AE714F000DA02B3 /* ulib.framework in Frameworks */,
 				A687A2082055D03000981654 /* ulibasn1.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -624,12 +628,12 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				COPY_PHASE_STRIP = NO;
 				DEAD_CODE_STRIPPING = YES;
 				DEPLOYMENT_LOCATION = YES;
 				DEPLOYMENT_POSTPROCESSING = YES;
-				DEVELOPMENT_TEAM = 38L827M334;
+				DEVELOPMENT_TEAM = 2GSNWPNR77;
 				DSTROOT = "";
 				ENABLE_MODULE_VERIFIER = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -655,11 +659,14 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				GENERATE_PROFILING_CODE = YES;
 				INSTALL_PATH = "";
-				MACOSX_DEPLOYMENT_TARGET = 13.1;
-				ONLY_ACTIVE_ARCH = NO;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
+				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
+				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = "-DCONFIG=Debug";
 				SDKROOT = macosx;
+				TVOS_DEPLOYMENT_TARGET = 16.6;
 				WARNING_CFLAGS = "-Wimplicit-fallthrough";
+				WATCHOS_DEPLOYMENT_TARGET = 9.6;
 			};
 			name = Debug;
 		};
@@ -693,13 +700,13 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				COPY_PHASE_STRIP = NO;
 				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEPLOYMENT_LOCATION = YES;
 				DEPLOYMENT_POSTPROCESSING = YES;
-				DEVELOPMENT_TEAM = 38L827M334;
+				DEVELOPMENT_TEAM = 2GSNWPNR77;
 				DSTROOT = "";
 				ENABLE_MODULE_VERIFIER = YES;
 				ENABLE_NS_ASSERTIONS = NO;
@@ -718,20 +725,22 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				GENERATE_PROFILING_CODE = YES;
 				INSTALL_PATH = "";
-				MACOSX_DEPLOYMENT_TARGET = 13.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
+				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_CFLAGS = "-DCONFIG=Release";
 				SDKROOT = macosx;
+				TVOS_DEPLOYMENT_TARGET = 16.6;
 				WARNING_CFLAGS = "-Wimplicit-fallthrough";
+				WATCHOS_DEPLOYMENT_TARGET = 9.6;
 			};
 			name = Release;
 		};
 		A672C7D119652D1B0090FC94 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
+				CODE_SIGN_IDENTITY = "";
 				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
 				DSTROOT = "/Library/Application Support";
 				DYLIB_COMPATIBILITY_VERSION = 2.0.0;
 				DYLIB_CURRENT_VERSION = 2.0.0;
@@ -743,7 +752,9 @@
 				INFOPLIST_FILE = "ulibasn1/ulibasn1-Info.plist";
 				INSTALL_PATH = /FinkTelecomServices/frameworks;
 				LIBRARY_SEARCH_PATHS = /usr/local/bin;
+				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
 				MARKETING_VERSION = 2.0.0;
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = me.fink.ulibasn1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = framework;
@@ -753,10 +764,8 @@
 		A672C7D219652D1B0090FC94 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
+				CODE_SIGN_IDENTITY = "";
 				CURRENT_PROJECT_VERSION = 1;
-				DEAD_CODE_STRIPPING = YES;
-				DEFINES_MODULE = YES;
 				DSTROOT = "/Library/Application Support";
 				DYLIB_COMPATIBILITY_VERSION = 2.0.0;
 				DYLIB_CURRENT_VERSION = 2.0.0;
@@ -768,7 +777,9 @@
 				INFOPLIST_FILE = "ulibasn1/ulibasn1-Info.plist";
 				INSTALL_PATH = /FinkTelecomServices/frameworks;
 				LIBRARY_SEARCH_PATHS = /usr/local/bin;
+				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
 				MARKETING_VERSION = 2.0.0;
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = me.fink.ulibasn1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = framework;
@@ -788,6 +799,7 @@
 					"$(inherited)",
 					"$(LOCAL_LIBRARY_DIR)/Application\\ Support/FinkTelecomServices/frameworks",
 					"$(LOCAL_LIBRARY_DIR)/Application\\ Support/FinkTelecomServices/frameworks",
+					"$(LOCAL_LIBRARY_DIR)/Application\\ Support/FinkTelecomServices/frameworks",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ulibasn1/ulibasn1-Prefix.pch";
@@ -796,7 +808,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "ulibasn1Tests/ulibasn1Tests-Info.plist";
-				MACOSX_DEPLOYMENT_TARGET = 13.5;
+				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
 				PRODUCT_BUNDLE_IDENTIFIER = "me.fink.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -817,11 +829,12 @@
 					"$(inherited)",
 					"$(LOCAL_LIBRARY_DIR)/Application\\ Support/FinkTelecomServices/frameworks",
 					"$(LOCAL_LIBRARY_DIR)/Application\\ Support/FinkTelecomServices/frameworks",
+					"$(LOCAL_LIBRARY_DIR)/Application\\ Support/FinkTelecomServices/frameworks",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ulibasn1/ulibasn1-Prefix.pch";
 				INFOPLIST_FILE = "ulibasn1Tests/ulibasn1Tests-Info.plist";
-				MACOSX_DEPLOYMENT_TARGET = 13.5;
+				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
 				PRODUCT_BUNDLE_IDENTIFIER = "me.fink.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -848,6 +861,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
+					"$(LOCAL_LIBRARY_DIR)/Application\\ Support/FinkTelecomServices/frameworks",
 					"$(LOCAL_LIBRARY_DIR)/Application\\ Support/FinkTelecomServices/frameworks",
 				);
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -876,6 +890,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
+					"$(LOCAL_LIBRARY_DIR)/Application\\ Support/FinkTelecomServices/frameworks",
 					"$(LOCAL_LIBRARY_DIR)/Application\\ Support/FinkTelecomServices/frameworks",
 				);
 				GCC_C_LANGUAGE_STANDARD = gnu11;

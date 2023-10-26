@@ -9,8 +9,7 @@
 // the author.
 
 
-#import <ulib/ulib.h>
-#import "UMASN1Object.h"
+#import <ulibasn1/UMASN1Object.h>
 
 @interface UMASN1Null : UMASN1Object
 

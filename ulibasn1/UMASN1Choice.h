@@ -8,7 +8,8 @@
 // Version 3 from 29 June 2007 and other commercial licenses available by
 // the author.
 
-#import "UMASN1Object.h"
+#import <ulibasn1/UMASN1Object.h>
+
 typedef enum    UMASN1ChoiceType
 {
     UMASN1ChoiceType_unknownEncoded = 0,
