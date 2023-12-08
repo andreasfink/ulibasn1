@@ -9,10 +9,10 @@
 // the author.
 
 
-#import "UMASN1Boolean.h"
-#import "UMASN1Object.h"
-#import "UMASN1Tag.h"
-#import "UMASN1Length.h"
+#import <ulibasn1/UMASN1Boolean.h>
+#import <ulibasn1/UMASN1Object.h>
+#import <ulibasn1/UMASN1Tag.h>
+#import <ulibasn1/UMASN1Length.h>
 
 
 @implementation UMASN1Boolean

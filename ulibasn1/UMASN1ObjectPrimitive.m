@@ -6,7 +6,7 @@
 //  Copyright © 2017 Andreas Fink (andreas@fink.org). All rights reserved.
 //
 
-#import "UMASN1ObjectPrimitive.h"
+#import <ulibasn1/UMASN1ObjectPrimitive.h>
 
 @implementation UMASN1ObjectPrimitive
 
