@@ -21,6 +21,7 @@ ulibasn1.pc
 ulibasn1/ulibasn1_config.h
 ulibasn1_config.h
 version.h
+*.m.d
 
 
 #########################
