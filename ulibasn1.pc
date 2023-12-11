@@ -1,0 +1,16 @@
+#ulibasn1 pkg-config source file
+
+prefix=/usr/local
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+Name: ulibasn1
+Cflags: -I${includedir}
+Libs: -L${libdir} -l:libulibasn1.dylib.2.0 -lm
+
+Description: universal ASN1 library
+Version: 2.0.0
+Requires: ulib 
+
+

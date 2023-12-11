@@ -9,7 +9,7 @@
 // the author.
 
 
-#import "UMASN1BitString.h"
+#import <ulibasn1/UMASN1BitString.h>
 
 @implementation UMASN1BitString
 
