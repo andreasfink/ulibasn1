@@ -1,0 +1,911 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A6061A021D2A6B2300A9BD54 /* UMASN1Enumerated.h in Headers */ = {isa = PBXBuildFile; fileRef = A6061A001D2A6B2300A9BD54 /* UMASN1Enumerated.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A6061A031D2A6B2300A9BD54 /* UMASN1Enumerated.m in Sources */ = {isa = PBXBuildFile; fileRef = A6061A011D2A6B2300A9BD54 /* UMASN1Enumerated.m */; };
+		A6091FBE1CB535F10076BD59 /* UMASN1ObjectConstructed.h in Headers */ = {isa = PBXBuildFile; fileRef = A6091FBC1CB535F10076BD59 /* UMASN1ObjectConstructed.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A6091FBF1CB535F10076BD59 /* UMASN1ObjectConstructed.m in Sources */ = {isa = PBXBuildFile; fileRef = A6091FBD1CB535F10076BD59 /* UMASN1ObjectConstructed.m */; };
+		A6091FC21CB536060076BD59 /* UMASN1ObjectPrimitive.h in Headers */ = {isa = PBXBuildFile; fileRef = A6091FC01CB536060076BD59 /* UMASN1ObjectPrimitive.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A6091FC31CB536060076BD59 /* UMASN1ObjectPrimitive.m in Sources */ = {isa = PBXBuildFile; fileRef = A6091FC11CB536060076BD59 /* UMASN1ObjectPrimitive.m */; };
+		A63DDF7E19BD3D0B003F83B5 /* UMASN1UTF8String.h in Headers */ = {isa = PBXBuildFile; fileRef = A63DDF7C19BD3D0B003F83B5 /* UMASN1UTF8String.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A63DDF7F19BD3D0B003F83B5 /* UMASN1UTF8String.m in Sources */ = {isa = PBXBuildFile; fileRef = A63DDF7D19BD3D0B003F83B5 /* UMASN1UTF8String.m */; };
+		A63DDF8319BD556E003F83B5 /* UMASN1Sequence.h in Headers */ = {isa = PBXBuildFile; fileRef = A63DDF8119BD556E003F83B5 /* UMASN1Sequence.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A63DDF8419BD556E003F83B5 /* UMASN1Sequence.m in Sources */ = {isa = PBXBuildFile; fileRef = A63DDF8219BD556E003F83B5 /* UMASN1Sequence.m */; };
+		A63DDF8719BD5A54003F83B5 /* UMASN1Set.h in Headers */ = {isa = PBXBuildFile; fileRef = A63DDF8519BD5A54003F83B5 /* UMASN1Set.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A63DDF8819BD5A54003F83B5 /* UMASN1Set.m in Sources */ = {isa = PBXBuildFile; fileRef = A63DDF8619BD5A54003F83B5 /* UMASN1Set.m */; };
+		A64347D4287E092F00D2B107 /* UMZMQSocket+ASN1.h in Headers */ = {isa = PBXBuildFile; fileRef = A64347D2287E092F00D2B107 /* UMZMQSocket+ASN1.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A64347D5287E092F00D2B107 /* UMZMQSocket+ASN1.m in Sources */ = {isa = PBXBuildFile; fileRef = A64347D3287E092F00D2B107 /* UMZMQSocket+ASN1.m */; };
+		A672C7C119652D1B0090FC94 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A672C7C019652D1B0090FC94 /* XCTest.framework */; };
+		A672C7C519652D1B0090FC94 /* ulibasn1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A672C7A819652D1B0090FC94 /* ulibasn1.framework */; };
+		A672C7CB19652D1B0090FC94 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A672C7C919652D1B0090FC94 /* InfoPlist.strings */; };
+		A672C7CD19652D1B0090FC94 /* ulibasn1Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = A672C7CC19652D1B0090FC94 /* ulibasn1Tests.m */; };
+		A687A2032055D01E00981654 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A687A2022055D01E00981654 /* main.m */; };
+		A687A2072055D02B00981654 /* ulib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A68E8DC319652E330090FC94 /* ulib.framework */; };
+		A687A2082055D03000981654 /* ulibasn1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A672C7A819652D1B0090FC94 /* ulibasn1.framework */; };
+		A68E8DAB19652E0E0090FC94 /* UMASN1BitString.h in Headers */ = {isa = PBXBuildFile; fileRef = A68E8D9319652E0E0090FC94 /* UMASN1BitString.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A68E8DAC19652E0E0090FC94 /* UMASN1BitString.m in Sources */ = {isa = PBXBuildFile; fileRef = A68E8D9419652E0E0090FC94 /* UMASN1BitString.m */; };
+		A68E8DAD19652E0E0090FC94 /* UMASN1Boolean.h in Headers */ = {isa = PBXBuildFile; fileRef = A68E8D9519652E0E0090FC94 /* UMASN1Boolean.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A68E8DAE19652E0E0090FC94 /* UMASN1Boolean.m in Sources */ = {isa = PBXBuildFile; fileRef = A68E8D9619652E0E0090FC94 /* UMASN1Boolean.m */; };
+		A68E8DAF19652E0E0090FC94 /* UMASN1Choice.h in Headers */ = {isa = PBXBuildFile; fileRef = A68E8D9719652E0E0090FC94 /* UMASN1Choice.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A68E8DB019652E0E0090FC94 /* UMASN1Choice.m in Sources */ = {isa = PBXBuildFile; fileRef = A68E8D9819652E0E0090FC94 /* UMASN1Choice.m */; };
+		A68E8DB119652E0E0090FC94 /* UMASN1EndOfContents.h in Headers */ = {isa = PBXBuildFile; fileRef = A68E8D9919652E0E0090FC94 /* UMASN1EndOfContents.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A68E8DB219652E0E0090FC94 /* UMASN1EndOfContents.m in Sources */ = {isa = PBXBuildFile; fileRef = A68E8D9A19652E0E0090FC94 /* UMASN1EndOfContents.m */; };
+		A68E8DB319652E0E0090FC94 /* UMASN1Integer.h in Headers */ = {isa = PBXBuildFile; fileRef = A68E8D9B19652E0E0090FC94 /* UMASN1Integer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A68E8DB419652E0E0090FC94 /* UMASN1Integer.m in Sources */ = {isa = PBXBuildFile; fileRef = A68E8D9C19652E0E0090FC94 /* UMASN1Integer.m */; };
+		A68E8DB519652E0E0090FC94 /* UMASN1Length.h in Headers */ = {isa = PBXBuildFile; fileRef = A68E8D9D19652E0E0090FC94 /* UMASN1Length.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A68E8DB619652E0E0090FC94 /* UMASN1Length.m in Sources */ = {isa = PBXBuildFile; fileRef = A68E8D9E19652E0E0090FC94 /* UMASN1Length.m */; };
+		A68E8DB919652E0E0090FC94 /* UMASN1Null.h in Headers */ = {isa = PBXBuildFile; fileRef = A68E8DA119652E0E0090FC94 /* UMASN1Null.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A68E8DBA19652E0E0090FC94 /* UMASN1Null.m in Sources */ = {isa = PBXBuildFile; fileRef = A68E8DA219652E0E0090FC94 /* UMASN1Null.m */; };
+		A68E8DBB19652E0E0090FC94 /* UMASN1Object.h in Headers */ = {isa = PBXBuildFile; fileRef = A68E8DA319652E0E0090FC94 /* UMASN1Object.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A68E8DBC19652E0E0090FC94 /* UMASN1Object.m in Sources */ = {isa = PBXBuildFile; fileRef = A68E8DA419652E0E0090FC94 /* UMASN1Object.m */; };
+		A68E8DBD19652E0E0090FC94 /* UMASN1OctetString.h in Headers */ = {isa = PBXBuildFile; fileRef = A68E8DA519652E0E0090FC94 /* UMASN1OctetString.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A68E8DBE19652E0E0090FC94 /* UMASN1OctetString.m in Sources */ = {isa = PBXBuildFile; fileRef = A68E8DA619652E0E0090FC94 /* UMASN1OctetString.m */; };
+		A68E8DC119652E0E0090FC94 /* UMASN1Tag.h in Headers */ = {isa = PBXBuildFile; fileRef = A68E8DA919652E0E0090FC94 /* UMASN1Tag.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A68E8DC219652E0E0090FC94 /* UMASN1Tag.m in Sources */ = {isa = PBXBuildFile; fileRef = A68E8DAA19652E0E0090FC94 /* UMASN1Tag.m */; };
+		A68E8DC419652E330090FC94 /* ulib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A68E8DC319652E330090FC94 /* ulib.framework */; };
+		A68E8DFB196548520090FC94 /* ulibasn1.h in Headers */ = {isa = PBXBuildFile; fileRef = A672C7B819652D1B0090FC94 /* ulibasn1.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A6C6E8981CC7DDDE00ADA9E0 /* UMASN1ObjectIdentifier.h in Headers */ = {isa = PBXBuildFile; fileRef = A6C6E8961CC7DDDE00ADA9E0 /* UMASN1ObjectIdentifier.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A6C6E8991CC7DDDE00ADA9E0 /* UMASN1ObjectIdentifier.m in Sources */ = {isa = PBXBuildFile; fileRef = A6C6E8971CC7DDDE00ADA9E0 /* UMASN1ObjectIdentifier.m */; };
+		A6C6E89C1CC7DE1400ADA9E0 /* UMASN1ObjectDescriptor.h in Headers */ = {isa = PBXBuildFile; fileRef = A6C6E89A1CC7DE1400ADA9E0 /* UMASN1ObjectDescriptor.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A6C6E89D1CC7DE1400ADA9E0 /* UMASN1ObjectDescriptor.m in Sources */ = {isa = PBXBuildFile; fileRef = A6C6E89B1CC7DE1400ADA9E0 /* UMASN1ObjectDescriptor.m */; };
+		A6C8F1F319BA7D0C0090FC94 /* UMASN1Real.h in Headers */ = {isa = PBXBuildFile; fileRef = A6C8F1F119BA7D0C0090FC94 /* UMASN1Real.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A6C8F1F419BA7D0C0090FC94 /* UMASN1Real.m in Sources */ = {isa = PBXBuildFile; fileRef = A6C8F1F219BA7D0C0090FC94 /* UMASN1Real.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A672C7C319652D1B0090FC94 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A672C79F19652D1B0090FC94 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A672C7A719652D1B0090FC94;
+			remoteInfo = ulibasn1;
+		};
+		A68E8DD719653E0F0090FC94 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A672C79F19652D1B0090FC94 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A672C7A719652D1B0090FC94;
+			remoteInfo = ulibasn1;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		A687A1FE2055D01D00981654 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		A6061A001D2A6B2300A9BD54 /* UMASN1Enumerated.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMASN1Enumerated.h; sourceTree = "<group>"; };
+		A6061A011D2A6B2300A9BD54 /* UMASN1Enumerated.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UMASN1Enumerated.m; sourceTree = "<group>"; };
+		A6091FBC1CB535F10076BD59 /* UMASN1ObjectConstructed.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = UMASN1ObjectConstructed.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		A6091FBD1CB535F10076BD59 /* UMASN1ObjectConstructed.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = UMASN1ObjectConstructed.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		A6091FC01CB536060076BD59 /* UMASN1ObjectPrimitive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = UMASN1ObjectPrimitive.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		A6091FC11CB536060076BD59 /* UMASN1ObjectPrimitive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = UMASN1ObjectPrimitive.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		A63DDF7B19BD3C8C003F83B5 /* asn1_in_simple_words.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = asn1_in_simple_words.pdf; sourceTree = "<group>"; };
+		A63DDF7C19BD3D0B003F83B5 /* UMASN1UTF8String.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMASN1UTF8String.h; sourceTree = "<group>"; };
+		A63DDF7D19BD3D0B003F83B5 /* UMASN1UTF8String.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UMASN1UTF8String.m; sourceTree = "<group>"; };
+		A63DDF8119BD556E003F83B5 /* UMASN1Sequence.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMASN1Sequence.h; sourceTree = "<group>"; };
+		A63DDF8219BD556E003F83B5 /* UMASN1Sequence.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UMASN1Sequence.m; sourceTree = "<group>"; };
+		A63DDF8519BD5A54003F83B5 /* UMASN1Set.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMASN1Set.h; sourceTree = "<group>"; };
+		A63DDF8619BD5A54003F83B5 /* UMASN1Set.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UMASN1Set.m; sourceTree = "<group>"; };
+		A63DDF8F19BD5FF5003F83B5 /* X.680-200811_BasicNotation.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "X.680-200811_BasicNotation.pdf"; sourceTree = "<group>"; };
+		A63DDF9019BD5FF5003F83B5 /* X.680-201110-Cor1.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "X.680-201110-Cor1.pdf"; sourceTree = "<group>"; };
+		A63DDF9119BD5FF5003F83B5 /* X.680-201403-Cor2.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "X.680-201403-Cor2.pdf"; sourceTree = "<group>"; };
+		A63DDF9219BD5FF5003F83B5 /* X.681-200811_InformationObject.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "X.681-200811_InformationObject.pdf"; sourceTree = "<group>"; };
+		A63DDF9319BD5FF5003F83B5 /* X.682-200811_Constraints.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "X.682-200811_Constraints.pdf"; sourceTree = "<group>"; };
+		A63DDF9419BD5FF5003F83B5 /* X.683-200811_Parametrization.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "X.683-200811_Parametrization.pdf"; sourceTree = "<group>"; };
+		A63DDF9519BD5FF5003F83B5 /* X.690-200811_BER_CER_DER.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "X.690-200811_BER_CER_DER.pdf"; sourceTree = "<group>"; };
+		A63DDF9619BD5FF5003F83B5 /* X.690-201110-Cor1.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "X.690-201110-Cor1.pdf"; sourceTree = "<group>"; };
+		A63DDF9719BD5FF5003F83B5 /* X.690-201403-Cor2.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "X.690-201403-Cor2.pdf"; sourceTree = "<group>"; };
+		A63DDF9819BD5FF5003F83B5 /* X.691-200811_PER.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "X.691-200811_PER.pdf"; sourceTree = "<group>"; };
+		A63DDF9919BD5FF5003F83B5 /* X.692-200811_ECN.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "X.692-200811_ECN.pdf"; sourceTree = "<group>"; };
+		A63DDF9A19BD5FF5003F83B5 /* X.693-200811_XER.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "X.693-200811_XER.pdf"; sourceTree = "<group>"; };
+		A63DDF9B19BD5FF5003F83B5 /* X.694-200811_XMLSchema.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "X.694-200811_XMLSchema.pdf"; sourceTree = "<group>"; };
+		A63DDF9C19BD5FF5003F83B5 /* X.695-200811_Registration.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "X.695-200811_Registration.pdf"; sourceTree = "<group>"; };
+		A64347D2287E092F00D2B107 /* UMZMQSocket+ASN1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UMZMQSocket+ASN1.h"; sourceTree = "<group>"; };
+		A64347D3287E092F00D2B107 /* UMZMQSocket+ASN1.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UMZMQSocket+ASN1.m"; sourceTree = "<group>"; };
+		A672C7A819652D1B0090FC94 /* ulibasn1.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ulibasn1.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A672C7AE19652D1B0090FC94 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		A672C7AF19652D1B0090FC94 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		A672C7B019652D1B0090FC94 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		A672C7B319652D1B0090FC94 /* ulibasn1-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ulibasn1-Info.plist"; sourceTree = "<group>"; };
+		A672C7B519652D1B0090FC94 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		A672C7B719652D1B0090FC94 /* ulibasn1-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ulibasn1-Prefix.pch"; sourceTree = "<group>"; };
+		A672C7B819652D1B0090FC94 /* ulibasn1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ulibasn1.h; sourceTree = "<group>"; };
+		A672C7BF19652D1B0090FC94 /* ulibasn1Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ulibasn1Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A672C7C019652D1B0090FC94 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		A672C7C819652D1B0090FC94 /* ulibasn1Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ulibasn1Tests-Info.plist"; sourceTree = "<group>"; };
+		A672C7CA19652D1B0090FC94 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		A672C7CC19652D1B0090FC94 /* ulibasn1Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ulibasn1Tests.m; sourceTree = "<group>"; };
+		A675980C1B1C64840090FC94 /* VERSION */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = VERSION; sourceTree = "<group>"; };
+		A687A2002055D01D00981654 /* oid */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = oid; sourceTree = BUILT_PRODUCTS_DIR; };
+		A687A2022055D01E00981654 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		A68E8D9319652E0E0090FC94 /* UMASN1BitString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMASN1BitString.h; sourceTree = "<group>"; };
+		A68E8D9419652E0E0090FC94 /* UMASN1BitString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UMASN1BitString.m; sourceTree = "<group>"; };
+		A68E8D9519652E0E0090FC94 /* UMASN1Boolean.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMASN1Boolean.h; sourceTree = "<group>"; };
+		A68E8D9619652E0E0090FC94 /* UMASN1Boolean.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UMASN1Boolean.m; sourceTree = "<group>"; };
+		A68E8D9719652E0E0090FC94 /* UMASN1Choice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMASN1Choice.h; sourceTree = "<group>"; };
+		A68E8D9819652E0E0090FC94 /* UMASN1Choice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UMASN1Choice.m; sourceTree = "<group>"; };
+		A68E8D9919652E0E0090FC94 /* UMASN1EndOfContents.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMASN1EndOfContents.h; sourceTree = "<group>"; };
+		A68E8D9A19652E0E0090FC94 /* UMASN1EndOfContents.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UMASN1EndOfContents.m; sourceTree = "<group>"; };
+		A68E8D9B19652E0E0090FC94 /* UMASN1Integer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMASN1Integer.h; sourceTree = "<group>"; };
+		A68E8D9C19652E0E0090FC94 /* UMASN1Integer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UMASN1Integer.m; sourceTree = "<group>"; };
+		A68E8D9D19652E0E0090FC94 /* UMASN1Length.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMASN1Length.h; sourceTree = "<group>"; };
+		A68E8D9E19652E0E0090FC94 /* UMASN1Length.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UMASN1Length.m; sourceTree = "<group>"; };
+		A68E8DA119652E0E0090FC94 /* UMASN1Null.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMASN1Null.h; sourceTree = "<group>"; };
+		A68E8DA219652E0E0090FC94 /* UMASN1Null.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UMASN1Null.m; sourceTree = "<group>"; };
+		A68E8DA319652E0E0090FC94 /* UMASN1Object.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMASN1Object.h; sourceTree = "<group>"; };
+		A68E8DA419652E0E0090FC94 /* UMASN1Object.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UMASN1Object.m; sourceTree = "<group>"; };
+		A68E8DA519652E0E0090FC94 /* UMASN1OctetString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMASN1OctetString.h; sourceTree = "<group>"; };
+		A68E8DA619652E0E0090FC94 /* UMASN1OctetString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UMASN1OctetString.m; sourceTree = "<group>"; };
+		A68E8DA919652E0E0090FC94 /* UMASN1Tag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMASN1Tag.h; sourceTree = "<group>"; };
+		A68E8DAA19652E0E0090FC94 /* UMASN1Tag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UMASN1Tag.m; sourceTree = "<group>"; };
+		A68E8DC319652E330090FC94 /* ulib.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ulib.framework; path = "/Library/Application Support/FinkTelecomServices/frameworks/ulib.framework"; sourceTree = "<absolute>"; };
+		A6C6E8961CC7DDDE00ADA9E0 /* UMASN1ObjectIdentifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMASN1ObjectIdentifier.h; sourceTree = "<group>"; };
+		A6C6E8971CC7DDDE00ADA9E0 /* UMASN1ObjectIdentifier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UMASN1ObjectIdentifier.m; sourceTree = "<group>"; };
+		A6C6E89A1CC7DE1400ADA9E0 /* UMASN1ObjectDescriptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMASN1ObjectDescriptor.h; sourceTree = "<group>"; };
+		A6C6E89B1CC7DE1400ADA9E0 /* UMASN1ObjectDescriptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UMASN1ObjectDescriptor.m; sourceTree = "<group>"; };
+		A6C8F1F119BA7D0C0090FC94 /* UMASN1Real.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMASN1Real.h; sourceTree = "<group>"; };
+		A6C8F1F219BA7D0C0090FC94 /* UMASN1Real.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UMASN1Real.m; sourceTree = "<group>"; };
+		A6F693ED1B4E831D0090FC94 /* configure.in */ = {isa = PBXFileReference; lastKnownFileType = text; path = configure.in; sourceTree = "<group>"; };
+		A6F694181B4E853A0090FC94 /* Makefile.linux.in */ = {isa = PBXFileReference; lastKnownFileType = text; path = Makefile.linux.in; sourceTree = "<group>"; };
+		A6F694191B4E853A0090FC94 /* Makefile.osx.in */ = {isa = PBXFileReference; lastKnownFileType = text; path = Makefile.osx.in; sourceTree = "<group>"; };
+		A6F6941A1B4E85430090FC94 /* ulibasn1.pc.in */ = {isa = PBXFileReference; lastKnownFileType = text; path = ulibasn1.pc.in; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A672C7A419652D1B0090FC94 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A68E8DC419652E330090FC94 /* ulib.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A672C7BC19652D1B0090FC94 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A672C7C119652D1B0090FC94 /* XCTest.framework in Frameworks */,
+				A672C7C519652D1B0090FC94 /* ulibasn1.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A687A1FD2055D01D00981654 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A687A2072055D02B00981654 /* ulib.framework in Frameworks */,
+				A687A2082055D03000981654 /* ulibasn1.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A672C79E19652D1B0090FC94 = {
+			isa = PBXGroup;
+			children = (
+				A675980C1B1C64840090FC94 /* VERSION */,
+				A6F693ED1B4E831D0090FC94 /* configure.in */,
+				A6F694181B4E853A0090FC94 /* Makefile.linux.in */,
+				A6F694191B4E853A0090FC94 /* Makefile.osx.in */,
+				A6F6941A1B4E85430090FC94 /* ulibasn1.pc.in */,
+				A6C8F1E319BA522D0090FC94 /* doc */,
+				A68E8D9219652E0E0090FC94 /* Classes */,
+				A672C7B119652D1B0090FC94 /* ulibasn1 */,
+				A672C7C619652D1B0090FC94 /* ulibasn1Tests */,
+				A687A2012055D01E00981654 /* oid */,
+				A672C7AA19652D1B0090FC94 /* Frameworks */,
+				A672C7A919652D1B0090FC94 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A672C7A919652D1B0090FC94 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A672C7A819652D1B0090FC94 /* ulibasn1.framework */,
+				A672C7BF19652D1B0090FC94 /* ulibasn1Tests.xctest */,
+				A687A2002055D01D00981654 /* oid */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A672C7AA19652D1B0090FC94 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A68E8DC319652E330090FC94 /* ulib.framework */,
+				A672C7C019652D1B0090FC94 /* XCTest.framework */,
+				A672C7AD19652D1B0090FC94 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A672C7AD19652D1B0090FC94 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A672C7AE19652D1B0090FC94 /* Foundation.framework */,
+				A672C7AF19652D1B0090FC94 /* CoreData.framework */,
+				A672C7B019652D1B0090FC94 /* AppKit.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		A672C7B119652D1B0090FC94 /* ulibasn1 */ = {
+			isa = PBXGroup;
+			children = (
+				A672C7B819652D1B0090FC94 /* ulibasn1.h */,
+				A672C7B219652D1B0090FC94 /* Supporting Files */,
+			);
+			path = ulibasn1;
+			sourceTree = "<group>";
+		};
+		A672C7B219652D1B0090FC94 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A672C7B319652D1B0090FC94 /* ulibasn1-Info.plist */,
+				A672C7B419652D1B0090FC94 /* InfoPlist.strings */,
+				A672C7B719652D1B0090FC94 /* ulibasn1-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A672C7C619652D1B0090FC94 /* ulibasn1Tests */ = {
+			isa = PBXGroup;
+			children = (
+				A672C7CC19652D1B0090FC94 /* ulibasn1Tests.m */,
+				A672C7C719652D1B0090FC94 /* Supporting Files */,
+			);
+			path = ulibasn1Tests;
+			sourceTree = "<group>";
+		};
+		A672C7C719652D1B0090FC94 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A672C7C819652D1B0090FC94 /* ulibasn1Tests-Info.plist */,
+				A672C7C919652D1B0090FC94 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A687A2012055D01E00981654 /* oid */ = {
+			isa = PBXGroup;
+			children = (
+				A687A2022055D01E00981654 /* main.m */,
+			);
+			path = oid;
+			sourceTree = "<group>";
+		};
+		A68E8D9219652E0E0090FC94 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				A68E8DA919652E0E0090FC94 /* UMASN1Tag.h */,
+				A68E8DAA19652E0E0090FC94 /* UMASN1Tag.m */,
+				A68E8D9D19652E0E0090FC94 /* UMASN1Length.h */,
+				A68E8D9E19652E0E0090FC94 /* UMASN1Length.m */,
+				A68E8DA319652E0E0090FC94 /* UMASN1Object.h */,
+				A68E8DA419652E0E0090FC94 /* UMASN1Object.m */,
+				A6C6E8961CC7DDDE00ADA9E0 /* UMASN1ObjectIdentifier.h */,
+				A6C6E8971CC7DDDE00ADA9E0 /* UMASN1ObjectIdentifier.m */,
+				A6091FBC1CB535F10076BD59 /* UMASN1ObjectConstructed.h */,
+				A6091FBD1CB535F10076BD59 /* UMASN1ObjectConstructed.m */,
+				A6C6E89A1CC7DE1400ADA9E0 /* UMASN1ObjectDescriptor.h */,
+				A6C6E89B1CC7DE1400ADA9E0 /* UMASN1ObjectDescriptor.m */,
+				A6091FC01CB536060076BD59 /* UMASN1ObjectPrimitive.h */,
+				A6091FC11CB536060076BD59 /* UMASN1ObjectPrimitive.m */,
+				A6C8F1F119BA7D0C0090FC94 /* UMASN1Real.h */,
+				A6C8F1F219BA7D0C0090FC94 /* UMASN1Real.m */,
+				A68E8D9319652E0E0090FC94 /* UMASN1BitString.h */,
+				A68E8D9419652E0E0090FC94 /* UMASN1BitString.m */,
+				A68E8D9519652E0E0090FC94 /* UMASN1Boolean.h */,
+				A68E8D9619652E0E0090FC94 /* UMASN1Boolean.m */,
+				A68E8D9719652E0E0090FC94 /* UMASN1Choice.h */,
+				A68E8D9819652E0E0090FC94 /* UMASN1Choice.m */,
+				A68E8D9919652E0E0090FC94 /* UMASN1EndOfContents.h */,
+				A68E8D9A19652E0E0090FC94 /* UMASN1EndOfContents.m */,
+				A68E8D9B19652E0E0090FC94 /* UMASN1Integer.h */,
+				A68E8D9C19652E0E0090FC94 /* UMASN1Integer.m */,
+				A68E8DA119652E0E0090FC94 /* UMASN1Null.h */,
+				A68E8DA219652E0E0090FC94 /* UMASN1Null.m */,
+				A68E8DA519652E0E0090FC94 /* UMASN1OctetString.h */,
+				A68E8DA619652E0E0090FC94 /* UMASN1OctetString.m */,
+				A63DDF7C19BD3D0B003F83B5 /* UMASN1UTF8String.h */,
+				A63DDF7D19BD3D0B003F83B5 /* UMASN1UTF8String.m */,
+				A63DDF8119BD556E003F83B5 /* UMASN1Sequence.h */,
+				A63DDF8219BD556E003F83B5 /* UMASN1Sequence.m */,
+				A63DDF8519BD5A54003F83B5 /* UMASN1Set.h */,
+				A63DDF8619BD5A54003F83B5 /* UMASN1Set.m */,
+				A6061A001D2A6B2300A9BD54 /* UMASN1Enumerated.h */,
+				A6061A011D2A6B2300A9BD54 /* UMASN1Enumerated.m */,
+				A64347D2287E092F00D2B107 /* UMZMQSocket+ASN1.h */,
+				A64347D3287E092F00D2B107 /* UMZMQSocket+ASN1.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		A6C8F1E319BA522D0090FC94 /* doc */ = {
+			isa = PBXGroup;
+			children = (
+				A63DDF7B19BD3C8C003F83B5 /* asn1_in_simple_words.pdf */,
+				A63DDF8F19BD5FF5003F83B5 /* X.680-200811_BasicNotation.pdf */,
+				A63DDF9019BD5FF5003F83B5 /* X.680-201110-Cor1.pdf */,
+				A63DDF9119BD5FF5003F83B5 /* X.680-201403-Cor2.pdf */,
+				A63DDF9219BD5FF5003F83B5 /* X.681-200811_InformationObject.pdf */,
+				A63DDF9319BD5FF5003F83B5 /* X.682-200811_Constraints.pdf */,
+				A63DDF9419BD5FF5003F83B5 /* X.683-200811_Parametrization.pdf */,
+				A63DDF9519BD5FF5003F83B5 /* X.690-200811_BER_CER_DER.pdf */,
+				A63DDF9619BD5FF5003F83B5 /* X.690-201110-Cor1.pdf */,
+				A63DDF9719BD5FF5003F83B5 /* X.690-201403-Cor2.pdf */,
+				A63DDF9819BD5FF5003F83B5 /* X.691-200811_PER.pdf */,
+				A63DDF9919BD5FF5003F83B5 /* X.692-200811_ECN.pdf */,
+				A63DDF9A19BD5FF5003F83B5 /* X.693-200811_XER.pdf */,
+				A63DDF9B19BD5FF5003F83B5 /* X.694-200811_XMLSchema.pdf */,
+				A63DDF9C19BD5FF5003F83B5 /* X.695-200811_Registration.pdf */,
+			);
+			path = doc;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		A672C7A519652D1B0090FC94 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A68E8DFB196548520090FC94 /* ulibasn1.h in Headers */,
+				A6C6E8981CC7DDDE00ADA9E0 /* UMASN1ObjectIdentifier.h in Headers */,
+				A68E8DBB19652E0E0090FC94 /* UMASN1Object.h in Headers */,
+				A63DDF8319BD556E003F83B5 /* UMASN1Sequence.h in Headers */,
+				A68E8DAD19652E0E0090FC94 /* UMASN1Boolean.h in Headers */,
+				A68E8DB519652E0E0090FC94 /* UMASN1Length.h in Headers */,
+				A68E8DB919652E0E0090FC94 /* UMASN1Null.h in Headers */,
+				A68E8DAF19652E0E0090FC94 /* UMASN1Choice.h in Headers */,
+				A64347D4287E092F00D2B107 /* UMZMQSocket+ASN1.h in Headers */,
+				A68E8DC119652E0E0090FC94 /* UMASN1Tag.h in Headers */,
+				A6C6E89C1CC7DE1400ADA9E0 /* UMASN1ObjectDescriptor.h in Headers */,
+				A6C8F1F319BA7D0C0090FC94 /* UMASN1Real.h in Headers */,
+				A6061A021D2A6B2300A9BD54 /* UMASN1Enumerated.h in Headers */,
+				A6091FBE1CB535F10076BD59 /* UMASN1ObjectConstructed.h in Headers */,
+				A63DDF7E19BD3D0B003F83B5 /* UMASN1UTF8String.h in Headers */,
+				A68E8DB119652E0E0090FC94 /* UMASN1EndOfContents.h in Headers */,
+				A68E8DB319652E0E0090FC94 /* UMASN1Integer.h in Headers */,
+				A63DDF8719BD5A54003F83B5 /* UMASN1Set.h in Headers */,
+				A6091FC21CB536060076BD59 /* UMASN1ObjectPrimitive.h in Headers */,
+				A68E8DBD19652E0E0090FC94 /* UMASN1OctetString.h in Headers */,
+				A68E8DAB19652E0E0090FC94 /* UMASN1BitString.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		A672C7A719652D1B0090FC94 /* ulibasn1 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A672C7D019652D1B0090FC94 /* Build configuration list for PBXNativeTarget "ulibasn1" */;
+			buildPhases = (
+				A675980B1B1C643E0090FC94 /* ShellScript */,
+				A672C7A319652D1B0090FC94 /* Sources */,
+				A672C7A419652D1B0090FC94 /* Frameworks */,
+				A672C7A519652D1B0090FC94 /* Headers */,
+				A672C7A619652D1B0090FC94 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ulibasn1;
+			productName = ulibasn1;
+			productReference = A672C7A819652D1B0090FC94 /* ulibasn1.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		A672C7BE19652D1B0090FC94 /* ulibasn1Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A672C7D319652D1B0090FC94 /* Build configuration list for PBXNativeTarget "ulibasn1Tests" */;
+			buildPhases = (
+				A672C7BB19652D1B0090FC94 /* Sources */,
+				A672C7BC19652D1B0090FC94 /* Frameworks */,
+				A672C7BD19652D1B0090FC94 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A672C7C419652D1B0090FC94 /* PBXTargetDependency */,
+				A68E8DD819653E0F0090FC94 /* PBXTargetDependency */,
+			);
+			name = ulibasn1Tests;
+			productName = ulibasn1Tests;
+			productReference = A672C7BF19652D1B0090FC94 /* ulibasn1Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		A687A1FF2055D01D00981654 /* oid */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A687A2062055D01E00981654 /* Build configuration list for PBXNativeTarget "oid" */;
+			buildPhases = (
+				A687A1FC2055D01D00981654 /* Sources */,
+				A687A1FD2055D01D00981654 /* Frameworks */,
+				A687A1FE2055D01D00981654 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = oid;
+			productName = oid;
+			productReference = A687A2002055D01D00981654 /* oid */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A672C79F19652D1B0090FC94 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1400;
+				ORGANIZATIONNAME = "Andreas Fink (andreas@fink.org)";
+				TargetAttributes = {
+					A672C7A719652D1B0090FC94 = {
+						DevelopmentTeam = 2GSNWPNR77;
+						ProvisioningStyle = Automatic;
+					};
+					A672C7BE19652D1B0090FC94 = {
+						DevelopmentTeam = 2GSNWPNR77;
+						ProvisioningStyle = Automatic;
+						TestTargetID = A672C7A719652D1B0090FC94;
+					};
+					A687A1FF2055D01D00981654 = {
+						CreatedOnToolsVersion = 9.2;
+						DevelopmentTeam = 2GSNWPNR77;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = A672C7A219652D1B0090FC94 /* Build configuration list for PBXProject "ulibasn1" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A672C79E19652D1B0090FC94;
+			productRefGroup = A672C7A919652D1B0090FC94 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A672C7A719652D1B0090FC94 /* ulibasn1 */,
+				A672C7BE19652D1B0090FC94 /* ulibasn1Tests */,
+				A687A1FF2055D01D00981654 /* oid */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A672C7A619652D1B0090FC94 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A672C7BD19652D1B0090FC94 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A672C7CB19652D1B0090FC94 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		A675980B1B1C643E0090FC94 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/VERSION",
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/version.h",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [ -f version.h ]\nthen\nif [ VERSION -nt version.h ]\nthen\n./configure\nfi\nelse\n./configure\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A672C7A319652D1B0090FC94 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A68E8DC219652E0E0090FC94 /* UMASN1Tag.m in Sources */,
+				A68E8DB019652E0E0090FC94 /* UMASN1Choice.m in Sources */,
+				A64347D5287E092F00D2B107 /* UMZMQSocket+ASN1.m in Sources */,
+				A6061A031D2A6B2300A9BD54 /* UMASN1Enumerated.m in Sources */,
+				A63DDF8419BD556E003F83B5 /* UMASN1Sequence.m in Sources */,
+				A68E8DAE19652E0E0090FC94 /* UMASN1Boolean.m in Sources */,
+				A6C6E89D1CC7DE1400ADA9E0 /* UMASN1ObjectDescriptor.m in Sources */,
+				A68E8DB219652E0E0090FC94 /* UMASN1EndOfContents.m in Sources */,
+				A68E8DBC19652E0E0090FC94 /* UMASN1Object.m in Sources */,
+				A68E8DAC19652E0E0090FC94 /* UMASN1BitString.m in Sources */,
+				A68E8DBE19652E0E0090FC94 /* UMASN1OctetString.m in Sources */,
+				A63DDF7F19BD3D0B003F83B5 /* UMASN1UTF8String.m in Sources */,
+				A6C8F1F419BA7D0C0090FC94 /* UMASN1Real.m in Sources */,
+				A68E8DB619652E0E0090FC94 /* UMASN1Length.m in Sources */,
+				A6C6E8991CC7DDDE00ADA9E0 /* UMASN1ObjectIdentifier.m in Sources */,
+				A63DDF8819BD5A54003F83B5 /* UMASN1Set.m in Sources */,
+				A6091FC31CB536060076BD59 /* UMASN1ObjectPrimitive.m in Sources */,
+				A68E8DBA19652E0E0090FC94 /* UMASN1Null.m in Sources */,
+				A6091FBF1CB535F10076BD59 /* UMASN1ObjectConstructed.m in Sources */,
+				A68E8DB419652E0E0090FC94 /* UMASN1Integer.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A672C7BB19652D1B0090FC94 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A672C7CD19652D1B0090FC94 /* ulibasn1Tests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A687A1FC2055D01D00981654 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A687A2032055D01E00981654 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A672C7C419652D1B0090FC94 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A672C7A719652D1B0090FC94 /* ulibasn1 */;
+			targetProxy = A672C7C319652D1B0090FC94 /* PBXContainerItemProxy */;
+		};
+		A68E8DD819653E0F0090FC94 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A672C7A719652D1B0090FC94 /* ulibasn1 */;
+			targetProxy = A68E8DD719653E0F0090FC94 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		A672C7B419652D1B0090FC94 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A672C7B519652D1B0090FC94 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		A672C7C919652D1B0090FC94 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A672C7CA19652D1B0090FC94 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A672C7CE19652D1B0090FC94 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = NO;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEPLOYMENT_LOCATION = YES;
+				DEPLOYMENT_POSTPROCESSING = YES;
+				DSTROOT = /;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = "\"/Library/Application Support/FinkTelecomServices/frameworks\"";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INSTALL_PATH = "/Library/Application Support/FinkTelecomServices/frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CFLAGS = "-DCONFIG=Debug";
+				SDKROOT = macosx;
+				STRIP_INSTALLED_PRODUCT = NO;
+				WARNING_CFLAGS = "-Wimplicit-fallthrough";
+			};
+			name = Debug;
+		};
+		A672C7CF19652D1B0090FC94 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = NO;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEPLOYMENT_LOCATION = YES;
+				DEPLOYMENT_POSTPROCESSING = YES;
+				DSTROOT = /;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = "\"/Library/Application Support/FinkTelecomServices/frameworks\"";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INSTALL_PATH = "/Library/Application Support/FinkTelecomServices/frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CFLAGS = "-DCONFIG=Release";
+				SDKROOT = macosx;
+				STRIP_INSTALLED_PRODUCT = NO;
+				WARNING_CFLAGS = "-Wimplicit-fallthrough";
+			};
+			name = Release;
+		};
+		A672C7D119652D1B0090FC94 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = (
+					"$(ARCHS_STANDARD)",
+					x86_64,
+					arm64,
+				);
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2GSNWPNR77;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_VERSION = A;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ulibasn1/ulibasn1-Prefix.pch";
+				INFOPLIST_FILE = "ulibasn1/ulibasn1-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MARKETING_VERSION = 1.16.3;
+				PRODUCT_BUNDLE_IDENTIFIER = me.fink.ulibasn1;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Debug;
+		};
+		A672C7D219652D1B0090FC94 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = (
+					"$(ARCHS_STANDARD)",
+					x86_64,
+					arm64,
+				);
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2GSNWPNR77;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_VERSION = A;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ulibasn1/ulibasn1-Prefix.pch";
+				INFOPLIST_FILE = "ulibasn1/ulibasn1-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MARKETING_VERSION = 1.16.3;
+				PRODUCT_BUNDLE_IDENTIFIER = me.fink.ulibasn1;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Release;
+		};
+		A672C7D419652D1B0090FC94 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 2GSNWPNR77;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ulibasn1/ulibasn1-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "ulibasn1Tests/ulibasn1Tests-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "me.fink.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		A672C7D519652D1B0090FC94 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 2GSNWPNR77;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ulibasn1/ulibasn1-Prefix.pch";
+				INFOPLIST_FILE = "ulibasn1Tests/ulibasn1Tests-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "me.fink.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+		A687A2042055D01E00981654 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_MODULES = NO;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEPLOYMENT_LOCATION = YES;
+				DEVELOPMENT_TEAM = 2GSNWPNR77;
+				DSTROOT = /;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INSTALL_PATH = "/Library/Application Support/FinkTelecomServices/bin";
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		A687A2052055D01E00981654 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_MODULES = NO;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEPLOYMENT_LOCATION = YES;
+				DEVELOPMENT_TEAM = 2GSNWPNR77;
+				DSTROOT = /;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INSTALL_PATH = "/Library/Application Support/FinkTelecomServices/bin";
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A672C7A219652D1B0090FC94 /* Build configuration list for PBXProject "ulibasn1" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A672C7CE19652D1B0090FC94 /* Debug */,
+				A672C7CF19652D1B0090FC94 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A672C7D019652D1B0090FC94 /* Build configuration list for PBXNativeTarget "ulibasn1" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A672C7D119652D1B0090FC94 /* Debug */,
+				A672C7D219652D1B0090FC94 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A672C7D319652D1B0090FC94 /* Build configuration list for PBXNativeTarget "ulibasn1Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A672C7D419652D1B0090FC94 /* Debug */,
+				A672C7D519652D1B0090FC94 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A687A2062055D01E00981654 /* Build configuration list for PBXNativeTarget "oid" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A687A2042055D01E00981654 /* Debug */,
+				A687A2052055D01E00981654 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A672C79F19652D1B0090FC94 /* Project object */;
+}
