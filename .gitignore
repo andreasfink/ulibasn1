@@ -17,6 +17,8 @@ BUILDNR
 make_buildnr.sh
 buildnumber.c
 buildnumber.h
+ulibasn1.pc
+
 
 
 
