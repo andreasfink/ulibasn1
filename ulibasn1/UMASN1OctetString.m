@@ -9,7 +9,7 @@
 // the author.
 
 
-#import "UMASN1OctetString.h"
+#import <ulibasn1/UMASN1OctetString.h>
 
 @implementation UMASN1OctetString
 
